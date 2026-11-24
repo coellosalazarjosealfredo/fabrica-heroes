@@ -1,6 +1,8 @@
 name: Producción diaria
 
 on:
+  push:
+    paths: ["data/orden.json"]   # Claude sube una orden para lanzar una producción puntual
   schedule:
     - cron: "0 8 * * *"   # 03:00 en Ecuador (los guiones del día llegan antes)
   workflow_dispatch:
@@ -26,15 +28,43 @@ concurrency:
   group: produccion
   cancel-in-progress: false
 
-env:
-  MODO: ${{ github.event_name == 'schedule' && 'completo' || inputs.modo }}
-  CANTIDAD: ${{ github.event_name == 'schedule' && (vars.CANTIDAD || '8') || inputs.cantidad }}
-  HORARIOS: ${{ inputs.horarios || vars.HORARIOS || '07:00,09:00,11:00,13:00,15:00,17:00,19:00,21:00' }}
-  ZONA_HORARIA: ${{ vars.ZONA_HORARIA || 'America/Guayaquil' }}
-
 jobs:
+  config:
+    runs-on: ubuntu-latest
+    outputs:
+      modo: ${{ steps.c.outputs.modo }}
+      cantidad: ${{ steps.c.outputs.cantidad }}
+      horarios: ${{ steps.c.outputs.horarios }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: c
+        env:
+          EVENTO: ${{ github.event_name }}
+          IN_MODO: ${{ inputs.modo }}
+          IN_CANT: ${{ inputs.cantidad }}
+          IN_HOR: ${{ inputs.horarios }}
+          V_CANT: ${{ vars.CANTIDAD }}
+          V_HOR: ${{ vars.HORARIOS }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          e = os.environ; ev = e["EVENTO"]
+          hor_def = e.get("V_HOR") or "07:00,09:00,11:00,13:00,15:00,17:00,19:00,21:00"
+          if ev == "push":
+              o = json.load(open("data/orden.json"))
+              modo, cant, hor = o.get("modo", "completo"), str(o.get("cantidad", 1)), o.get("horarios") or hor_def
+          elif ev == "schedule":
+              modo, cant, hor = "completo", e.get("V_CANT") or "8", hor_def
+          else:
+              modo, cant, hor = e["IN_MODO"], e["IN_CANT"] or "1", e.get("IN_HOR") or hor_def
+          with open(e["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"modo={modo}\ncantidad={cant}\nhorarios={hor}\n")
+          print(modo, cant, hor)
+          PY
+
   canales:
-    if: ${{ github.event_name == 'workflow_dispatch' && inputs.modo == 'canales' }}
+    needs: config
+    if: ${{ needs.config.outputs.modo == 'canales' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -47,7 +77,8 @@ jobs:
         run: python fabrica/publicar.py
 
   producir:
-    if: ${{ github.event_name == 'schedule' || inputs.modo != 'canales' }}
+    needs: config
+    if: ${{ needs.config.outputs.modo != 'canales' }}
     runs-on: ubuntu-latest
     timeout-minutes: 300
     steps:
@@ -70,7 +101,10 @@ jobs:
           key: modelos-voz-v1
       - name: Producir videos
         env:
+          ZONA_HORARIA: ${{ vars.ZONA_HORARIA || 'America/Guayaquil' }}
           PASO: producir
+          CANTIDAD: ${{ needs.config.outputs.cantidad }}
+          HORARIOS: ${{ needs.config.outputs.horarios }}
         run: python fabrica/publicar.py
       - name: Videos para descargar (7 días)
         if: always()
@@ -86,14 +120,14 @@ jobs:
           name: manifiesto
           path: data/manifiesto.json
       - name: Preparar sitio de medios
-        if: ${{ env.MODO == 'completo' }}
+        if: ${{ needs.config.outputs.modo == 'completo' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: sitio
 
   desplegar:
-    needs: producir
-    if: ${{ github.event_name == 'schedule' || inputs.modo == 'completo' }}
+    needs: [config, producir]
+    if: ${{ needs.config.outputs.modo == 'completo' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -105,7 +139,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
   programar:
-    needs: desplegar
+    needs: [config, desplegar]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -118,6 +152,8 @@ jobs:
       - name: Programar en Buffer
         env:
           PASO: programar
+          HORARIOS: ${{ needs.config.outputs.horarios }}
+          ZONA_HORARIA: ${{ vars.ZONA_HORARIA || 'America/Guayaquil' }}
           URL_SITIO: ${{ needs.desplegar.outputs.url }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           YOUTUBE_CHANNEL_ID: ${{ vars.YOUTUBE_CHANNEL_ID }}
