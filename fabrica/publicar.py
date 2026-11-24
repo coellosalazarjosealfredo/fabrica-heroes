@@ -61,6 +61,8 @@ def id_canal(servicio, var):
     if env(var): return env(var)
     cs = [c for c in canales() if c["service"] == servicio]
     if len(cs) == 1: return cs[0]["id"]
+    if not cs:
+        resumen(f"⚠️ No hay ningún canal de {servicio} conectado en Buffer: se omite esa red."); return None
     sys.exit(f"Define la variable {var}: hay {len(cs)} canales de {servicio} en Buffer (ejecuta el paso 'canales').")
 
 def crear_post(canal, texto, url_video, cuando_utc, meta):
@@ -141,16 +143,20 @@ def paso_programar():
         fila = {"guion": m["guion"], "id": m.get("id"), "url": url, "programado": cuando.isoformat(timespec="minutes")}
         if not accesible(url):
             fila["error"] = "el video no está accesible en GitHub Pages"; filas.append(fila); continue
-        try:
+        if yt:
+          try:
             p = crear_post(yt, pub.get("descripcion", ""), url, utc,
                            {"youtube": {"title": (pub.get("titulo_youtube") or pub.get("titulo") or "")[:100], "categoryId": "1",
-                                        "privacy": env("VISIBILIDAD", "public"), "madeForKids": False, "isAiGenerated": True, "type": "short"}})
+                                        "privacy": env("VISIBILIDAD", "public"), "madeForKids": False, "isAiGenerated": True}})
             fila["youtube_post"] = p["id"]
-        except Exception as e: fila["youtube_error"] = str(e)[:300]
-        try:
+          except Exception as e: fila["youtube_error"] = str(e)[:300]
+        else: fila["youtube_error"] = "sin canal en Buffer"
+        if tk:
+          try:
             p = crear_post(tk, pub.get("texto_tiktok") or pub.get("descripcion", ""), url, utc, {"tiktok": {"isAiGenerated": True}})
             fila["tiktok_post"] = p["id"]
-        except Exception as e: fila["tiktok_error"] = str(e)[:300]
+          except Exception as e: fila["tiktok_error"] = str(e)[:300]
+        else: fila["tiktok_error"] = "sin canal en Buffer"
         ok = "youtube_post" in fila or "tiktok_post" in fila
         if ok and os.path.exists(os.path.join(PEND, m["guion"])):
             shutil.move(os.path.join(PEND, m["guion"]), os.path.join(HECHOS, m["guion"]))
