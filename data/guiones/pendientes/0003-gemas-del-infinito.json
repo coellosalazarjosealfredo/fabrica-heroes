@@ -1,0 +1,31 @@
+{
+  "id": "H-0003",
+  "publicacion": {
+    "titulo_youtube": "¿Dónde estaba cada Gema del Infinito? 💎 #shorts",
+    "descripcion": "Las 6 Gemas del Infinito y dónde se escondía cada una en el UCM 💎\n\n#marvel #gemasdelinfinito #thanos #avengers #ucm #superheroes #shorts",
+    "texto_tiktok": "¿Dónde estaba cada Gema del Infinito? 💎 #marvel #gemasdelinfinito #thanos #avengers #ucm",
+    "tags": ["marvel", "gemas del infinito", "thanos", "ucm"]
+  },
+  "serie": {"texto": "LAS 6 GEMAS", "total": 6},
+  "bloques": [
+    {"texto": "Seis gemas... y cada una escondida en un lugar distinto.",
+     "escena": {"tipo": "titulo", "lineas": ["LAS 6 GEMAS", {"t": "¿DÓNDE ESTABAN?", "c": "verde"}], "arte": "gemas", "fondo": "#1F3B8A"}},
+    {"texto": "Espacio: en el Teseracto.", "paso": 1,
+     "escena": {"tipo": "ficha", "titulo": "Espacio", "anio": "Teseracto · 2011", "arte": "portal", "color": "#1F3B8A"}},
+    {"texto": "Mente: en el cetro de Loki.", "paso": 2,
+     "escena": {"tipo": "ficha", "titulo": "Mente", "anio": "Cetro · 2012", "arte": "estrella", "color": "#7A5A12"}},
+    {"texto": "Realidad: el Éter, en Svartalfheim.", "decir": "Realidad: el Éter, en Svártalfjeim.", "paso": 3,
+     "escena": {"tipo": "ficha", "titulo": "Realidad", "anio": "Éter · 2013", "arte": "fuego", "color": "#8A1F2B"}},
+    {"texto": "Poder y Tiempo: el Orbe y el Ojo de Agamotto.", "paso": 5,
+     "escena": {"tipo": "dos_fichas", "fichas": [{"titulo": "Poder", "anio": "Orbe · 2014", "arte": "planeta", "color": "#4B1F7A"},
+                                                {"titulo": "Tiempo", "anio": "Ojo · 2016", "arte": "ojo", "color": "#14532D"}], "fondo": "#4B1F7A"}},
+    {"texto": "Y Alma: en Vormir, a cambio de lo que más amas.", "paso": 6,
+     "escena": {"tipo": "ficha", "titulo": "Alma", "anio": "Vormir · 2018", "arte": "calavera", "color": "#7A2E12", "destacar": true, "impacto": true}},
+    {"texto": "Seis gemas... seis escondites.",
+     "escenas": [{"tipo": "medallones", "lineas": [{"t": "6 ESCONDITES", "c": "dorado"}], "fondo": "#3A3F55",
+                  "items": [{"arte": "portal", "texto": "ESPACIO", "color": "#1F3B8A"}, {"arte": "estrella", "texto": "MENTE", "color": "#7A5A12"},
+                            {"arte": "fuego", "texto": "REALIDAD", "color": "#8A1F2B"}, {"arte": "planeta", "texto": "PODER", "color": "#4B1F7A"},
+                            {"arte": "ojo", "texto": "TIEMPO", "color": "#14532D"}, {"arte": "calavera", "texto": "ALMA", "color": "#7A2E12"}]},
+                 {"tipo": "bucle"}]}
+  ]
+}

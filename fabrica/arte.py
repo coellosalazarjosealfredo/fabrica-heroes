@@ -564,4 +564,4 @@ def medallon(ctx, cx, cy, r, arte, etiqueta, col, t, pop=1.0):
     ctx.save(); ctx.arc(cx, cy, r * 0.86, 0, 6.2832); ctx.clip()
     dibujar_arte(ctx, arte, cx, cy, r * 0.5, t); ctx.restore()
     if etiqueta and pop > 0.6:
-        pill(ctx, etiqueta, cx, cy + r + 14, max(22, r * 0.24), col, fg=WHITE, padx=14, maxw=r * 2.4)
+        pill(ctx, etiqueta, cx, cy + r + 18, max(34, r * 0.3), col, fg=WHITE, padx=14, maxw=r * 2.3)

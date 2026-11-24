@@ -1,0 +1,133 @@
+name: Producción diaria
+
+on:
+  schedule:
+    - cron: "0 8 * * *"   # 03:00 en Ecuador (los guiones del día llegan antes)
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "completo = producir y programar · solo_render = solo videos para revisar · canales = ver IDs de Buffer"
+        type: choice
+        options: [completo, solo_render, canales]
+        default: solo_render
+      cantidad:
+        description: "Cuántos videos producir"
+        default: "1"
+      horarios:
+        description: "Horarios solo para esta ejecución (opcional), ej. 20:00,21:00,22:00"
+        default: ""
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: produccion
+  cancel-in-progress: false
+
+env:
+  MODO: ${{ github.event_name == 'schedule' && 'completo' || inputs.modo }}
+  CANTIDAD: ${{ github.event_name == 'schedule' && (vars.CANTIDAD || '8') || inputs.cantidad }}
+  HORARIOS: ${{ inputs.horarios || vars.HORARIOS || '07:00,09:00,11:00,13:00,15:00,17:00,19:00,21:00' }}
+  ZONA_HORARIA: ${{ vars.ZONA_HORARIA || 'America/Guayaquil' }}
+
+jobs:
+  canales:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.modo == 'canales' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Listar canales de Buffer
+        env:
+          PASO: canales
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+        run: python fabrica/publicar.py
+
+  producir:
+    if: ${{ github.event_name == 'schedule' || inputs.modo != 'canales' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar ffmpeg y cairo
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg libcairo2 fontconfig
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: fabrica/requirements.txt
+      - name: Instalar librerías
+        run: pip install -r fabrica/requirements.txt
+      - name: Recuperar modelos de voz (caché)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: modelos-voz-v1
+      - name: Producir videos
+        env:
+          PASO: producir
+        run: python fabrica/publicar.py
+      - name: Videos para descargar (7 días)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos-${{ github.run_number }}
+          path: sitio/v/*.mp4
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Guardar manifiesto
+        uses: actions/upload-artifact@v4
+        with:
+          name: manifiesto
+          path: data/manifiesto.json
+      - name: Preparar sitio de medios
+        if: ${{ env.MODO == 'completo' }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: sitio
+
+  desplegar:
+    needs: producir
+    if: ${{ github.event_name == 'schedule' || inputs.modo == 'completo' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    outputs:
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4
+
+  programar:
+    needs: desplegar
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - uses: actions/download-artifact@v4
+        with:
+          name: manifiesto
+          path: data
+      - name: Programar en Buffer
+        env:
+          PASO: programar
+          URL_SITIO: ${{ needs.desplegar.outputs.url }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          YOUTUBE_CHANNEL_ID: ${{ vars.YOUTUBE_CHANNEL_ID }}
+          TIKTOK_CHANNEL_ID: ${{ vars.TIKTOK_CHANNEL_ID }}
+          VISIBILIDAD: ${{ vars.VISIBILIDAD || 'public' }}
+        run: python fabrica/publicar.py
+      - name: Registrar guiones usados
+        if: always()
+        run: |
+          git config user.name "fabrica-bot"
+          git config user.email "fabrica-bot@users.noreply.github.com"
+          git add data/guiones data/registro.jsonl 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "Programación $(date +%F)" && git pull --rebase -q && git push)

@@ -1,0 +1,34 @@
+{
+  "id": "H-0002",
+  "publicacion": {
+    "titulo_youtube": "La película de Marvel que más dinero ha hecho 💰 #shorts",
+    "descripcion": "Top 5 de las películas más taquilleras del UCM 💰🎬\n\n#marvel #endgame #infinitywar #spiderman #avengers #ucm #taquilla #shorts",
+    "texto_tiktok": "¿Cuál es la película de Marvel más taquillera? 💰 #marvel #endgame #avengers #ucm #taquilla #superheroes",
+    "tags": ["marvel", "taquilla", "endgame", "ucm", "avengers"]
+  },
+  "serie": {"texto": "TOP 5 TAQUILLA MARVEL", "total": 5},
+  "fuentes": ["https://www.boxofficemojo.com/franchise/fr3125251845/"],
+  "bloques": [
+    {"texto": "¿Cuál es la película de Marvel... que más dinero ha hecho?",
+     "decir": "¿Cuál es la película de Márvel... que más dinero ha hecho?",
+     "escena": {"tipo": "titulo", "lineas": ["¿LA MÁS TAQUILLERA", {"t": "DE MARVEL?", "c": "verde"}], "arte": "palomito", "fondo": "#7A5A12"}},
+    {"texto": "Quinto... Era de Ultrón, 1.405 millones.", "decir": "Quinto... Era de Ultrón, mil cuatrocientos cinco millones.", "paso": 1,
+     "escena": {"tipo": "ficha", "titulo": "Era de Ultrón", "anio": "2015", "arte": "robot", "color": "#3A3F55", "rango": "#5", "cifra": "US$ 1.405 MILLONES"}},
+    {"texto": "Cuarto... Los Vengadores, 1.520 millones.", "decir": "Cuarto... Los Vengadores, mil quinientos veinte millones.", "paso": 2,
+     "escena": {"tipo": "ficha", "titulo": "Los Vengadores", "anio": "2012", "arte": "ciudad", "color": "#1F3B8A", "rango": "#4", "cifra": "US$ 1.520 MILLONES"}},
+    {"texto": "Tercero... Sin camino a casa, 1.921 millones.", "decir": "Tercero... Sin camino a casa, mil novecientos veintiún millones.", "paso": 3,
+     "escena": {"tipo": "ficha", "titulo": "Sin camino a casa", "anio": "2021", "arte": "telarana", "color": "#8A1F2B", "rango": "#3", "cifra": "US$ 1.921 MILLONES"}},
+    {"texto": "Segundo... Infinity War, más de 2.000 millones.", "decir": "Segundo... Infíniti Uór, más de dos mil millones.", "paso": 4,
+     "escena": {"tipo": "ficha", "titulo": "Infinity War", "anio": "2018", "arte": "gemas", "color": "#4B1F7A", "rango": "#2", "cifra": "US$ 2.048 MILLONES"}},
+    {"texto": "Y el número uno... Endgame, casi 2.800 millones...", "decir": "Y el número uno... Éndgueim, casi dos mil ochocientos millones...", "paso": 5,
+     "escena": {"tipo": "ficha", "titulo": "Endgame", "anio": "2019", "arte": "reloj_arena", "color": "#7A5A12", "rango": "#1", "cifra": "US$ 2.799 MILLONES", "destacar": true, "impacto": true}},
+    {"texto": "la película de Marvel que más dinero ha hecho.", "decir": "la película de Márvel que más dinero ha hecho.",
+     "escenas": [{"tipo": "mosaico", "lineas": ["TOP 5", {"t": "TAQUILLA", "c": "verde"}], "destacar": 0, "fondo": "#7A5A12",
+                  "fichas": [{"titulo": "Endgame", "anio": "2019", "arte": "reloj_arena", "color": "#7A5A12"},
+                             {"titulo": "Infinity War", "anio": "2018", "arte": "gemas", "color": "#4B1F7A"},
+                             {"titulo": "Sin camino a casa", "anio": "2021", "arte": "telarana", "color": "#8A1F2B"},
+                             {"titulo": "Los Vengadores", "anio": "2012", "arte": "ciudad", "color": "#1F3B8A"},
+                             {"titulo": "Era de Ultrón", "anio": "2015", "arte": "robot", "color": "#3A3F55"}]},
+                 {"tipo": "bucle"}]}
+  ]
+}
