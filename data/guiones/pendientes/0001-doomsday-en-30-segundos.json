@@ -1,0 +1,41 @@
+{
+  "id": "H-0001",
+  "publicacion": {
+    "titulo_youtube": "Avengers: Doomsday en 30 segundos 🔥 #shorts",
+    "descripcion": "Todo lo que tienes que saber de Avengers: Doomsday antes del estreno 🎬\n\n#marvel #avengersdoomsday #doctordoom #xmen #ucm #superheroes #shorts",
+    "texto_tiktok": "Avengers: Doomsday en 30 segundos 🔥 #marvel #avengersdoomsday #doctordoom #xmen #ucm #superheroes",
+    "tags": ["marvel", "avengers doomsday", "doctor doom", "ucm", "superheroes"]
+  },
+  "fuentes": ["https://www.dodmagazine.es/vengadores-doomsday-reparto-personajes/", "https://www.techradar.com/streaming/entertainment/marvels-avengers-doomsday-hub"],
+  "bloques": [
+    {"texto": "Lo que tienes que saber de Avengers: Doomsday... en treinta segundos.",
+     "decir": "Lo que tienes que saber de Avéngers: Dúmsdei... en treinta segundos.",
+     "escena": {"tipo": "titulo", "lineas": ["DOOMSDAY", {"t": "EN 30 SEGUNDOS", "c": "verde"}], "arte": "portal", "fondo": "#14532D"}},
+    {"texto": "Se estrena el 18 de diciembre de 2026.",
+     "decir": "Se estrena el dieciocho de diciembre de dos mil veintiséis.",
+     "escena": {"tipo": "cifra", "valor": 18, "sufijo": " DIC", "texto": "ESTRENO 2026", "arte": "claqueta", "fondo": "#7A2E12"}},
+    {"texto": "La dirigen los hermanos Russo... los de Infinity War y Endgame.",
+     "decir": "La dirigen los hermanos Rúso... los de Infíniti Uór y Éndgueim.",
+     "escena": {"tipo": "dos_fichas", "titulo": "LOS RUSSO", "fondo": "#4B1F7A",
+                "fichas": [{"titulo": "Infinity War", "anio": "2018", "arte": "gemas", "color": "#4B1F7A"},
+                           {"titulo": "Endgame", "anio": "2019", "arte": "reloj_arena", "color": "#7A5A12"}],
+                "pie": "¡VUELVEN!", "pie_color": "verde"}},
+    {"texto": "El villano: Doctor Doom... con Robert Downey Jr.",
+     "decir": "El villano: Dóctor Dum... con Róbert Dáuni Yúnior.",
+     "escena": {"tipo": "titulo", "lineas": ["EL VILLANO", {"t": "DOCTOR DOOM", "c": "verde"}], "arte": "casco", "pie": "ROBERT DOWNEY JR.", "pie_color": "amarillo", "fondo": "#0E5E6F", "impacto": true}},
+    {"texto": "Y se juntan cinco equipos.",
+     "escena": {"tipo": "medallones", "lineas": [{"t": "5 EQUIPOS", "c": "dorado"}], "fondo": "#3A3F55",
+                "items": [{"arte": "escudo", "texto": "VENGADORES", "color": "#1F3B8A"},
+                          {"arte": "planeta", "texto": "4 FANTÁSTICOS", "color": "#0E5E6F"},
+                          {"arte": "ojo", "texto": "X-MEN", "color": "#7A5A12"},
+                          {"arte": "rayo", "texto": "THUNDERBOLTS", "color": "#3A3F55"},
+                          {"arte": "corona", "texto": "WAKANDA", "color": "#4B1F7A"}]}},
+    {"texto": "La primera de los Vengadores en 7 años.",
+     "decir": "La primera de los Vengadores en siete años.",
+     "escena": {"tipo": "cifra", "valor": 7, "sufijo": " AÑOS", "texto": "SIN VENGADORES", "arte": "reloj_arena", "fondo": "#8A1F2B"}},
+    {"texto": "Y en 2027 llega Secret Wars... eso es lo que tienes que saber.",
+     "decir": "Y en dos mil veintisiete llega Sícret Uórs... eso es lo que tienes que saber.",
+     "escenas": [{"tipo": "ficha", "titulo": "Secret Wars", "anio": "17 DIC 2027", "arte": "portal", "color": "#1F3B8A", "check": false, "fondo": "#1F3B8A"},
+                 {"tipo": "bucle"}]}
+  ]
+}
