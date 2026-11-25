@@ -1,0 +1,137 @@
+{
+  "id": "H-20261125-09",
+  "publicacion": {
+    "titulo_youtube": "Las 4 escenas nuevas de Endgame Encore que conectan con Doomsday 🎬 #shorts",
+    "descripcion": "Avengers: Endgame Encore ya está en Disney+ con cuatro escenas nuevas que conectan con Avengers: Doomsday 🎬\n\n¿Cuál de las cuatro escenas te gustó más? 👇\n\n#marvel #endgame #endgameencore #avengersdoomsday #disneyplus #ucm #shorts",
+    "texto_tiktok": "Las 4 escenas nuevas de Endgame Encore 🎬 ¿Cuál de las cuatro escenas te gustó más? 👇 #marvel #endgame #endgameencore #avengersdoomsday #disneyplus #ucm",
+    "tags": [
+      "marvel",
+      "endgame encore",
+      "disney plus",
+      "avengers doomsday",
+      "escenas nuevas"
+    ]
+  },
+  "fuentes": [
+    "https://www.thewrap.com/creative-content/movies/whats-in-avengers-endgame-encore-new-footage-doomsday/",
+    "https://www.space.com/entertainment/space-movies-shows/avengers-endgame-encore-is-now-streaming-on-disney-with-4-minutes-of-bonus-footage-and-a-special-doomsday-preview"
+  ],
+  "bloques": [
+    {
+      "texto": "Endgame tiene cuatro escenas nuevas... y todas apuntan a Doomsday.",
+      "decir": "Éndgueim tiene cuatro escenas nuevas... y todas apuntan a Dúmsdei.",
+      "escena": {
+        "tipo": "titulo",
+        "numero": 4,
+        "lineas": [
+          "ESCENAS",
+          {
+            "t": "NUEVAS",
+            "c": "verde"
+          }
+        ],
+        "arte": "cine_claqueta",
+        "fondo": "#7A5A12"
+      }
+    },
+    {
+      "texto": "Uno: Loki toca la puerta de Peggy y Steve.",
+      "decir": "Uno: Lóki toca la puerta de Pégui y Stiv.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Loki",
+        "anio": "CON PEGGY",
+        "arte": "corona",
+        "color": "#14532D",
+        "rango": "#1",
+        "check": false,
+        "fondo": "#14532D"
+      }
+    },
+    {
+      "texto": "Dos: Doctor Doom viene a llevarse a Bruce Banner.",
+      "decir": "Dos: Dóctor Dum viene a llevarse a Brus Bánner.",
+      "escena": {
+        "tipo": "versus",
+        "titulo": "ESCENA 2",
+        "a": {
+          "titulo": "Doctor Doom",
+          "anio": "VILLANO",
+          "arte": "casco",
+          "color": "#14532D"
+        },
+        "b": {
+          "titulo": "Bruce Banner",
+          "anio": "ATRAPADO",
+          "arte": "rayo",
+          "color": "#4B1F7A"
+        }
+      }
+    },
+    {
+      "texto": "Tres: la TVA ve cómo el multiverso colapsa.",
+      "decir": "Tres: la Ti Vi Ei ve cómo el multiverso colapsa.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "EL MULTIVERSO",
+          {
+            "t": "COLAPSA",
+            "c": "rojo"
+          }
+        ],
+        "arte": "portal",
+        "fondo": "#0E5E6F",
+        "impacto": true
+      }
+    },
+    {
+      "texto": "Cuatro: Tony forja su primera máscara... y aparece Doom.",
+      "decir": "Cuatro: Tóni forja su primera máscara... y aparece Dum.",
+      "escena": {
+        "tipo": "medallones",
+        "lineas": [
+          {
+            "t": "ESCENA 4",
+            "c": "dorado"
+          }
+        ],
+        "fondo": "#8A1F2B",
+        "items": [
+          {
+            "arte": "martillo",
+            "texto": "TONY",
+            "color": "#8A1F2B"
+          },
+          {
+            "arte": "mascara",
+            "texto": "MARK I",
+            "color": "#7A5A12"
+          },
+          {
+            "arte": "casco",
+            "texto": "DOOM",
+            "color": "#14532D"
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Ya está en Disney+... cuatro escenas nuevas que apuntan a Doomsday.",
+      "decir": "Ya está en Dísni Plus... cuatro escenas nuevas que apuntan a Dúmsdei.",
+      "escenas": [
+        {
+          "tipo": "cifra",
+          "valor": 4,
+          "sufijo": " MIN",
+          "texto": "METRAJE EXTRA",
+          "arte": "cine_rollo",
+          "fondo": "#3A3F55"
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "id": "H-20261125-02",
+  "publicacion": {
+    "titulo_youtube": "El tráiler final de Doomsday explica por qué vuelve Steve Rogers 😱 Parte 1 #shorts",
+    "descripcion": "Parte 1: lo que revela el tráiler final de Avengers: Doomsday sobre Steve Rogers, su hijo y los 4 Fantásticos 🎬\n\n¿Qué escena del tráiler te voló la cabeza? 👇\n\n#marvel #avengersdoomsday #steverogers #capitanamerica #fantasticfour #ucm #shorts",
+    "texto_tiktok": "Tráiler final de Doomsday, parte 1 😱 ¿Qué escena del tráiler te voló la cabeza? 👇 #marvel #avengersdoomsday #steverogers #capitanamerica #fantasticfour #ucm",
+    "tags": [
+      "marvel",
+      "avengers doomsday",
+      "trailer final",
+      "steve rogers",
+      "fantastic four"
+    ]
+  },
+  "fuentes": [
+    "https://abcnews.com/GMA/Culture/avengers-doomsday-final-trailer-released/story?id=138375955",
+    "https://deadline.com/2026/11/avengers-doomsday-final-trailer-1237231535/",
+    "https://www.space.com/entertainment/space-movies-shows/avengers-doomsday-gets-final-trailer-explaining-why-steve-rogers-is-back-and-showing-an-epic-battle-with-the-x-men"
+  ],
+  "bloques": [
+    {
+      "texto": "Steve Rogers tiene un hijo... y el tráiler final de Doomsday lo confirma.",
+      "decir": "Stiv Róyers tiene un hijo... y el tráiler final de Dúmsdei lo confirma.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "STEVE ROGERS",
+          {
+            "t": "¿TIENE UN HIJO?",
+            "c": "amarillo"
+          }
+        ],
+        "arte": "palomito",
+        "fondo": "#1F3B8A",
+        "globo": "¡NO LO SABÍAS!"
+      }
+    },
+    {
+      "texto": "Abre con Steve y Peggy hablando de contarle la verdad.",
+      "decir": "Abre con Stiv y Pégui hablando de contarle la verdad.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "EN CASA",
+        "fondo": "#7A5A12",
+        "fichas": [
+          {
+            "titulo": "Steve",
+            "anio": "CHRIS EVANS",
+            "arte": "escudo",
+            "color": "#1F3B8A",
+            "check": false
+          },
+          {
+            "titulo": "Peggy",
+            "anio": "HAYLEY ATWELL",
+            "arte": "estrella",
+            "color": "#8A1F2B",
+            "check": false
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Entonces un destello trae a los Cuatro Fantásticos a su jardín.",
+      "escena": {
+        "tipo": "medallones",
+        "lineas": [
+          {
+            "t": "4 FANTÁSTICOS",
+            "c": "dorado"
+          }
+        ],
+        "fondo": "#0E5E6F",
+        "items": [
+          {
+            "arte": "planeta",
+            "texto": "REED",
+            "color": "#1F3B8A"
+          },
+          {
+            "arte": "ojo",
+            "texto": "SUE",
+            "color": "#0E5E6F"
+          },
+          {
+            "arte": "fuego",
+            "texto": "JOHNNY",
+            "color": "#7A2E12"
+          },
+          {
+            "arte": "martillo",
+            "texto": "BEN",
+            "color": "#7A5A12"
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Reed Richards le pregunta: ¿eres Steve Rogers?",
+      "decir": "Rid Ríchards le pregunta: ¿eres Stiv Róyers?",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Reed Richards",
+        "anio": "PEDRO PASCAL",
+        "arte": "portal",
+        "color": "#4B1F7A",
+        "check": false,
+        "fondo": "#4B1F7A",
+        "impacto": true
+      }
+    },
+    {
+      "texto": "Y su hijo adolescente suelta: papá, ¿eras un superhéroe?",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 1,
+        "texto": "HIJO ADOLESCENTE",
+        "arte": "interrogacion",
+        "fondo": "#8A1F2B"
+      }
+    },
+    {
+      "texto": "La parte 2 es todavía más loca... porque Steve Rogers tiene un hijo.",
+      "decir": "La parte dos es todavía más loca... porque Stiv Róyers tiene un hijo.",
+      "escenas": [
+        {
+          "tipo": "lista",
+          "titulo": "PARTE 2",
+          "items": [
+            "Doctor Doom",
+            "Las gemas",
+            "El reactor de Tony"
+          ],
+          "fondo": "#14532D"
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

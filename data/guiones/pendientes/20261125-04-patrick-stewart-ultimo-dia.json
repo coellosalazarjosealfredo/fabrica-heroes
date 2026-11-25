@@ -1,0 +1,137 @@
+{
+  "id": "H-20261125-04",
+  "publicacion": {
+    "titulo_youtube": "El último día de Patrick Stewart en un set de cine 💔 #shorts",
+    "descripcion": "Kevin Feige y los hermanos Russo recuerdan el último día de rodaje de Patrick Stewart en Avengers: Doomsday, su última actuación como el Profesor X 💔\n\n¿Cuál es tu escena favorita del Profesor X? 👇\n\n#marvel #patrickstewart #profesorx #xmen #avengersdoomsday #ucm #shorts",
+    "texto_tiktok": "El último día de Patrick Stewart en un set 💔 ¿Cuál es tu escena favorita del Profesor X? 👇 #marvel #patrickstewart #profesorx #xmen #avengersdoomsday #ucm",
+    "tags": [
+      "marvel",
+      "patrick stewart",
+      "profesor x",
+      "x-men",
+      "avengers doomsday"
+    ]
+  },
+  "fuentes": [
+    "https://www.superherohype.com/movies/708830-avengers-doomsday-directors-kevin-feige-patrick-stewart-last-day-set-death",
+    "https://en.wikipedia.org/wiki/Avengers:_Doomsday"
+  ],
+  "bloques": [
+    {
+      "texto": "El último día de Patrick Stewart en un set... fue en Avengers: Doomsday.",
+      "decir": "El último día de Pátrik Stúart en un set... fue en Avéngers: Dúmsdei.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "SU ÚLTIMO",
+          {
+            "t": "DÍA EN UN SET",
+            "c": "dorado"
+          }
+        ],
+        "arte": "cine_claqueta",
+        "fondo": "#3A3F55"
+      }
+    },
+    {
+      "texto": "Era el cierre del rodaje y él interpretaba al Profesor X.",
+      "decir": "Era el cierre del rodaje y él interpretaba al Profesor Equis.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Profesor X",
+        "anio": "DOOMSDAY",
+        "arte": "ojo",
+        "color": "#7A5A12",
+        "check": false,
+        "fondo": "#7A5A12"
+      }
+    },
+    {
+      "texto": "Kevin Feige cuenta que se levantó... y dio un discurso al equipo.",
+      "decir": "Kévin Fáigui cuenta que se levantó... y dio un discurso al equipo.",
+      "escena": {
+        "tipo": "lista",
+        "titulo": "ESE DÍA",
+        "items": [
+          "Se levantó",
+          "Habló al equipo",
+          "Se despidió"
+        ],
+        "fondo": "#1F3B8A"
+      }
+    },
+    {
+      "texto": "Los Russo dicen que se esforzó muchísimo pese a su salud.",
+      "decir": "Los Rúso dicen que se esforzó muchísimo pese a su salud.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "LOS RUSSO",
+        "fondo": "#4B1F7A",
+        "fichas": [
+          {
+            "titulo": "Anthony",
+            "anio": "DIRECTOR",
+            "arte": "cine_claqueta",
+            "color": "#4B1F7A",
+            "check": false
+          },
+          {
+            "titulo": "Joe",
+            "anio": "DIRECTOR",
+            "arte": "cine_rollo",
+            "color": "#0E5E6F",
+            "check": false
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Murió a los 86 años, y será su última actuación.",
+      "decir": "Murió a los ochenta y seis años, y será su última actuación.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 86,
+        "sufijo": " AÑOS",
+        "texto": "PATRICK STEWART",
+        "arte": "estrella",
+        "fondo": "#3A3F55"
+      }
+    },
+    {
+      "texto": "Por eso Doomsday guarda algo único... su último día en un set.",
+      "decir": "Por eso Dúmsdei guarda algo único... su último día en un set.",
+      "escenas": [
+        {
+          "tipo": "medallones",
+          "lineas": [
+            {
+              "t": "LEYENDA",
+              "c": "dorado"
+            }
+          ],
+          "fondo": "#7A5A12",
+          "items": [
+            {
+              "arte": "ojo",
+              "texto": "PROFESOR X",
+              "color": "#7A5A12"
+            },
+            {
+              "arte": "libro",
+              "texto": "X-MEN",
+              "color": "#1F3B8A"
+            },
+            {
+              "arte": "estrella",
+              "texto": "GRACIAS",
+              "color": "#4B1F7A"
+            }
+          ]
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "id": "H-20261125-03",
+  "publicacion": {
+    "titulo_youtube": "Doctor Doom: \"vidas robadas\" 🔥 Tráiler final de Doomsday Parte 2 #shorts",
+    "descripcion": "Parte 2: Doctor Doom, las gemas del infinito y el reactor de Tony en el tráiler final de Avengers: Doomsday 🔥\n\n¿Quién crees que tiene una vida robada? 👇\n\n#marvel #avengersdoomsday #doctordoom #robertdowneyjr #ucm #avengers #shorts",
+    "texto_tiktok": "Tráiler final de Doomsday, parte 2 🔥 ¿Quién crees que tiene una vida robada? 👇 #marvel #avengersdoomsday #doctordoom #robertdowneyjr #ucm #avengers",
+    "tags": [
+      "marvel",
+      "avengers doomsday",
+      "doctor doom",
+      "trailer final",
+      "gemas del infinito"
+    ]
+  },
+  "fuentes": [
+    "https://abcnews.com/GMA/Culture/avengers-doomsday-final-trailer-released/story?id=138375955",
+    "https://deadline.com/2026/11/avengers-doomsday-final-trailer-1237231535/",
+    "https://www.space.com/entertainment/space-movies-shows/avengers-doomsday-gets-final-trailer-explaining-why-steve-rogers-is-back-and-showing-an-epic-battle-with-the-x-men"
+  ],
+  "bloques": [
+    {
+      "texto": "Doctor Doom dice que todos vivieron vidas robadas... y que ahora deben devolverlas.",
+      "decir": "Dóctor Dum dice que todos vivieron vidas robadas... y que ahora deben devolverlas.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "VIDAS",
+          {
+            "t": "ROBADAS",
+            "c": "rojo"
+          }
+        ],
+        "arte": "casco",
+        "fondo": "#14532D",
+        "impacto": true
+      }
+    },
+    {
+      "texto": "Steve cuenta que hicieron lo necesario... sin saber las consecuencias.",
+      "decir": "Stiv cuenta que hicieron lo necesario... sin saber las consecuencias.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Steve Rogers",
+        "anio": "LA VOZ",
+        "arte": "escudo",
+        "color": "#1F3B8A",
+        "check": false,
+        "fondo": "#1F3B8A"
+      }
+    },
+    {
+      "texto": "Se ven el reactor de Tony flotando y un maletín con las gemas.",
+      "decir": "Se ven el reactor de Tóni flotando y un maletín con las gemas.",
+      "escena": {
+        "tipo": "medallones",
+        "lineas": [
+          {
+            "t": "PISTAS",
+            "c": "dorado"
+          }
+        ],
+        "fondo": "#3A3F55",
+        "items": [
+          {
+            "arte": "robot",
+            "texto": "REACTOR",
+            "color": "#7A2E12"
+          },
+          {
+            "arte": "gemas",
+            "texto": "GEMAS",
+            "color": "#4B1F7A"
+          },
+          {
+            "arte": "reloj_arena",
+            "texto": "VIAJE",
+            "color": "#0E5E6F"
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Y Bucky acompaña a Steve antes de viajar en el tiempo.",
+      "decir": "Y Báqui acompaña a Stiv antes de viajar en el tiempo.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "JUNTOS",
+        "fondo": "#0E5E6F",
+        "fichas": [
+          {
+            "titulo": "Bucky",
+            "anio": "SEBASTIAN STAN",
+            "arte": "estrella",
+            "color": "#3A3F55",
+            "check": false
+          },
+          {
+            "titulo": "Steve",
+            "anio": "CHRIS EVANS",
+            "arte": "escudo",
+            "color": "#1F3B8A",
+            "check": false
+          }
+        ]
+      }
+    },
+    {
+      "texto": "El tráiler dura tres minutos.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 3,
+        "sufijo": " MIN",
+        "texto": "TRÁILER FINAL",
+        "arte": "cine_rollo",
+        "fondo": "#7A2E12"
+      }
+    },
+    {
+      "texto": "Llega el 18 de diciembre... cuando Doom cobre esas vidas robadas.",
+      "decir": "Llega el dieciocho de diciembre... cuando Dum cobre esas vidas robadas.",
+      "escenas": [
+        {
+          "tipo": "ficha",
+          "titulo": "Avengers: Doomsday",
+          "anio": "18 DIC 2026",
+          "arte": "cine_claqueta",
+          "color": "#8A1F2B",
+          "check": false,
+          "fondo": "#8A1F2B"
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

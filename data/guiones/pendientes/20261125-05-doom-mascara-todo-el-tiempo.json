@@ -1,0 +1,132 @@
+{
+  "id": "H-20261125-05",
+  "publicacion": {
+    "titulo_youtube": "¿Robert Downey Jr. se quita la máscara de Doom? Chris Evans responde 🎭 #shorts",
+    "descripcion": "Chris Evans le contó a Empire que Robert Downey Jr. lleva la máscara de Doctor Doom todo el tiempo en Avengers: Doomsday 🎭\n\n¿Quieres ver la cara de Doom o que siga el misterio? 👇\n\n#marvel #doctordoom #robertdowneyjr #chrisevans #avengersdoomsday #ucm #shorts",
+    "texto_tiktok": "¿Veremos la cara de Robert Downey Jr. como Doom? 🎭 ¿Quieres ver la cara de Doom o que siga el misterio? 👇 #marvel #doctordoom #robertdowneyjr #chrisevans #avengersdoomsday #ucm",
+    "tags": [
+      "marvel",
+      "doctor doom",
+      "robert downey jr",
+      "chris evans",
+      "avengers doomsday"
+    ]
+  },
+  "fuentes": [
+    "https://www.superherohype.com/movies/708750-avengers-doomsday-chris-evans-rdj-doctor-doom-mask-mcu-movie"
+  ],
+  "bloques": [
+    {
+      "texto": "¿Veremos la cara de Robert Downey Jr. como Doctor Doom?",
+      "decir": "¿Veremos la cara de Róbert Dáuni Yúnior como Dóctor Dum?",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "¿SE QUITA",
+          {
+            "t": "LA MÁSCARA?",
+            "c": "verde"
+          }
+        ],
+        "arte": "mascara",
+        "fondo": "#14532D",
+        "globo": "¿SERÁ CIERTO?",
+        "globo_tipo": "nube"
+      }
+    },
+    {
+      "texto": "Chris Evans respondió en la revista Empire.",
+      "decir": "Kris Évans respondió en la revista Émpaier.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Chris Evans",
+        "anio": "EMPIRE",
+        "arte": "libro",
+        "color": "#1F3B8A",
+        "check": false,
+        "fondo": "#1F3B8A"
+      }
+    },
+    {
+      "texto": "Su frase fue clarísima: lleva la máscara todo el tiempo.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 100,
+        "sufijo": "%",
+        "texto": "CON MÁSCARA",
+        "arte": "mascara",
+        "fondo": "#7A2E12"
+      }
+    },
+    {
+      "texto": "Y añadió que eso confirma que Downey puede hacer cualquier cosa.",
+      "decir": "Y añadió que eso confirma que Dáuni puede hacer cualquier cosa.",
+      "escena": {
+        "tipo": "medallones",
+        "lineas": [
+          {
+            "t": "DOWNEY",
+            "c": "dorado"
+          }
+        ],
+        "fondo": "#7A5A12",
+        "items": [
+          {
+            "arte": "robot",
+            "texto": "TONY STARK",
+            "color": "#8A1F2B"
+          },
+          {
+            "arte": "casco",
+            "texto": "DOCTOR DOOM",
+            "color": "#14532D"
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Ojo: pudo decirlo solo para evitar spoilers del final.",
+      "decir": "Ojo: pudo decirlo solo para evitar espóilers del final.",
+      "escena": {
+        "tipo": "lista",
+        "titulo": "¿Y SI MIENTE?",
+        "items": [
+          "Evitar spoilers",
+          "Proteger sorpresas",
+          "Misterio hasta el estreno"
+        ],
+        "fondo": "#4B1F7A"
+      }
+    },
+    {
+      "texto": "El 18 de diciembre sabremos si veremos la cara de Doom.",
+      "decir": "El dieciocho de diciembre sabremos si veremos la cara de Dum.",
+      "escenas": [
+        {
+          "tipo": "dos_fichas",
+          "titulo": "18 DIC",
+          "fondo": "#3A3F55",
+          "fichas": [
+            {
+              "titulo": "Con máscara",
+              "anio": "TODO EL TIEMPO",
+              "arte": "mascara",
+              "color": "#14532D",
+              "check": true
+            },
+            {
+              "titulo": "Sin máscara",
+              "anio": "¿SORPRESA?",
+              "arte": "interrogacion",
+              "color": "#8A1F2B",
+              "check": false
+            }
+          ]
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

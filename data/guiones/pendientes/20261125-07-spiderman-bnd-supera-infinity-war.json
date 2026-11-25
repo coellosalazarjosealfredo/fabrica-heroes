@@ -1,0 +1,134 @@
+{
+  "id": "H-20261125-07",
+  "publicacion": {
+    "titulo_youtube": "Spider-Man: Brand New Day ya superó a Infinity War 🕷️💰 #shorts",
+    "descripcion": "Spider-Man: Brand New Day suma más de 2.500 millones de dólares en el mundo y ya superó a Avengers: Infinity War 🕷️💰\n\n¿Crees que Doomsday superará a Spider-Man? 👇\n\n#marvel #spiderman #brandnewday #tomholland #taquilla #ucm #shorts",
+    "texto_tiktok": "Spider-Man: Brand New Day ya superó a Infinity War 🕷️💰 ¿Crees que Doomsday superará a Spider-Man? 👇 #marvel #spiderman #brandnewday #tomholland #taquilla #ucm",
+    "tags": [
+      "marvel",
+      "spider-man",
+      "brand new day",
+      "taquilla",
+      "infinity war"
+    ]
+  },
+  "fuentes": [
+    "https://www.the-numbers.com/movie/Spider-Man-Brand-New-Day-%282026%29",
+    "https://goodmorningamerica.com/culture/story/spider-man-brand-new-day-tops-2-billion-135691802"
+  ],
+  "bloques": [
+    {
+      "texto": "Spider-Man: Brand New Day ya superó a Infinity War en taquilla.",
+      "decir": "Spáider Man: Brand Niú Déi ya superó a Infíniti Uór en taquilla.",
+      "escena": {
+        "tipo": "versus",
+        "titulo": "TAQUILLA MUNDIAL",
+        "a": {
+          "titulo": "Brand New Day",
+          "anio": "2026",
+          "arte": "telarana",
+          "color": "#8A1F2B",
+          "cifra": "US$ 2.523 MILL."
+        },
+        "b": {
+          "titulo": "Infinity War",
+          "anio": "2018",
+          "arte": "gemas",
+          "color": "#4B1F7A",
+          "cifra": "US$ 2.048 MILL."
+        }
+      }
+    },
+    {
+      "texto": "Lleva más de 2.500 millones de dólares en el mundo.",
+      "decir": "Lleva más de dos mil quinientos millones de dólares en el mundo.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 2523,
+        "prefijo": "US$ ",
+        "sufijo": " M",
+        "texto": "TAQUILLA MUNDIAL",
+        "arte": "dinero",
+        "fondo": "#7A5A12"
+      }
+    },
+    {
+      "texto": "Abrió con 360 millones en Estados Unidos... más que Endgame.",
+      "decir": "Abrió con trescientos sesenta millones en Estados Unidos... más que Éndgueim.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "ESTRENO EN EE. UU.",
+        "fondo": "#1F3B8A",
+        "fichas": [
+          {
+            "titulo": "Brand New Day",
+            "anio": "US$ 360 M",
+            "arte": "telarana",
+            "color": "#8A1F2B",
+            "check": true
+          },
+          {
+            "titulo": "Endgame",
+            "anio": "US$ 357 M",
+            "arte": "reloj_arena",
+            "color": "#7A5A12",
+            "check": false
+          }
+        ],
+        "pie": "¡RÉCORD!",
+        "pie_color": "verde"
+      }
+    },
+    {
+      "texto": "Y allá ya pasa los 959 millones.",
+      "decir": "Y allá ya pasa los novecientos cincuenta y nueve millones.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Taquilla EE. UU.",
+        "anio": "2026",
+        "arte": "cine_boleto",
+        "color": "#14532D",
+        "cifra": "US$ 959 MILLONES",
+        "check": true,
+        "fondo": "#14532D"
+      }
+    },
+    {
+      "texto": "Desde el 19 de noviembre hay versión extendida en cines.",
+      "decir": "Desde el diecinueve de noviembre hay versión extendida en cines.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "VERSIÓN",
+          {
+            "t": "EXTENDIDA",
+            "c": "amarillo"
+          }
+        ],
+        "arte": "cine_palomitas",
+        "pie": "19 DE NOVIEMBRE",
+        "pie_color": "blanco",
+        "fondo": "#0E5E6F"
+      }
+    },
+    {
+      "texto": "Solo Endgame está por encima... porque Spider-Man ya superó a Infinity War.",
+      "decir": "Solo Éndgueim está por encima... porque Spáider Man ya superó a Infíniti Uór.",
+      "escenas": [
+        {
+          "tipo": "lista",
+          "titulo": "UCM: TOP 3",
+          "items": [
+            "1. Endgame",
+            "2. Brand New Day",
+            "3. Infinity War"
+          ],
+          "fondo": "#8A1F2B"
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "H-20261125-01",
+  "publicacion": {
+    "titulo_youtube": "Faltan 23 días para Doomsday ⏳ ¿Cuánto dura la película? #shorts",
+    "descripcion": "Cuenta regresiva a Avengers: Doomsday: faltan 23 días y ya se sabe su duración ⏳🎬\n\n¿Aguantas dos horas y media sin ir al baño? 👇\n\n#marvel #avengersdoomsday #doomsday #ucm #avengers #superheroes #shorts",
+    "texto_tiktok": "Faltan 23 días para Avengers: Doomsday ⏳ y ya sabemos cuánto dura. ¿Aguantas dos horas y media sin ir al baño? 👇 #marvel #avengersdoomsday #doomsday #ucm #avengers #superheroes",
+    "tags": [
+      "marvel",
+      "avengers doomsday",
+      "cuenta regresiva",
+      "ucm",
+      "russo"
+    ]
+  },
+  "serie": {
+    "texto": "CUENTA REGRESIVA DOOMSDAY",
+    "total": 23
+  },
+  "fuentes": [
+    "https://en.wikipedia.org/wiki/Avengers:_Doomsday",
+    "https://abcnews.com/GMA/Culture/avengers-doomsday-final-trailer-released/story?id=138375955"
+  ],
+  "bloques": [
+    {
+      "texto": "Faltan 23 días para Avengers: Doomsday... y ya sabemos cuánto dura.",
+      "decir": "Faltan veintitrés días para Avéngers: Dúmsdei... y ya sabemos cuánto dura.",
+      "escena": {
+        "tipo": "titulo",
+        "numero": 23,
+        "lineas": [
+          "FALTAN",
+          {
+            "t": "DÍAS",
+            "c": "verde"
+          }
+        ],
+        "arte": "reloj_arena",
+        "fondo": "#14532D",
+        "globo": "¡YA CASI!"
+      }
+    },
+    {
+      "texto": "Ciento cincuenta minutos... dos horas y media de multiverso.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 150,
+        "sufijo": " MIN",
+        "texto": "DURACIÓN",
+        "arte": "cine_palomitas",
+        "fondo": "#7A2E12"
+      }
+    },
+    {
+      "texto": "Y en las salas Infinity Vision dura un minuto más.",
+      "decir": "Y en las salas Infíniti Visión dura un minuto más.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "¿CUÁNTO DURA?",
+        "fondo": "#4B1F7A",
+        "fichas": [
+          {
+            "titulo": "Sala normal",
+            "anio": "150 MIN",
+            "arte": "cine_boleto",
+            "color": "#1F3B8A",
+            "check": false
+          },
+          {
+            "titulo": "Infinity Vision",
+            "anio": "151 MIN",
+            "arte": "cine_lentes3d",
+            "color": "#7A5A12",
+            "check": false
+          }
+        ],
+        "pie": "+1 MINUTO",
+        "pie_color": "amarillo"
+      }
+    },
+    {
+      "texto": "La música es de Alan Silvestri, el compositor de Endgame.",
+      "decir": "La música es de Álan Silvéstri, el compositor de Éndgueim.",
+      "paso": 1,
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Alan Silvestri",
+        "anio": "MÚSICA",
+        "arte": "cine_rollo",
+        "color": "#0E5E6F",
+        "check": true,
+        "fondo": "#0E5E6F"
+      }
+    },
+    {
+      "texto": "Y la dirigen los hermanos Russo, los de Infinity War.",
+      "decir": "Y la dirigen los hermanos Rúso, los de Infíniti Uór.",
+      "escena": {
+        "tipo": "lista",
+        "titulo": "LOS RUSSO",
+        "items": [
+          "Winter Soldier",
+          "Civil War",
+          "Infinity War",
+          "Endgame"
+        ],
+        "fondo": "#8A1F2B"
+      }
+    },
+    {
+      "texto": "Dos horas y media de Doom... y faltan solo 23 días.",
+      "decir": "Dos horas y media de Dum... y faltan solo veintitrés días.",
+      "escenas": [
+        {
+          "tipo": "medallones",
+          "lineas": [
+            {
+              "t": "18 DIC",
+              "c": "dorado"
+            }
+          ],
+          "fondo": "#3A3F55",
+          "items": [
+            {
+              "arte": "cine_claqueta",
+              "texto": "150 MIN",
+              "color": "#7A2E12"
+            },
+            {
+              "arte": "casco",
+              "texto": "DOOM",
+              "color": "#14532D"
+            },
+            {
+              "arte": "reloj_arena",
+              "texto": "23 DÍAS",
+              "color": "#7A5A12"
+            }
+          ]
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

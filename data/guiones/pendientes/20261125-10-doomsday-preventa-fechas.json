@@ -1,0 +1,138 @@
+{
+  "id": "H-20261125-10",
+  "publicacion": {
+    "titulo_youtube": "Doomsday ya arrasa en preventa 🎟️ y no se estrena igual en todo el mundo #shorts",
+    "descripcion": "Avengers: Doomsday ya vende millones en preventa y llega primero al Reino Unido, luego a India y Estados Unidos 🎟️\n\n¿Ya compraste tu boleto? 👇\n\n#marvel #avengersdoomsday #preventa #doomsday #ucm #cine #shorts",
+    "texto_tiktok": "Doomsday ya arrasa en preventa 🎟️ ¿Ya compraste tu boleto? 👇 #marvel #avengersdoomsday #preventa #doomsday #ucm #cine",
+    "tags": [
+      "marvel",
+      "avengers doomsday",
+      "preventa",
+      "estreno",
+      "taquilla"
+    ]
+  },
+  "fuentes": [
+    "https://www.business-standard.com/entertainment/avengers-doomsday-advance-booking-crosses-rs-57-cr-in-india-english-leads-nc-126112500232_1.html",
+    "https://en.wikipedia.org/wiki/Avengers:_Doomsday"
+  ],
+  "bloques": [
+    {
+      "texto": "Doomsday no se estrena el mismo día en todo el mundo.",
+      "decir": "Dúmsdei no se estrena el mismo día en todo el mundo.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "¿CUÁNDO",
+          {
+            "t": "SE ESTRENA?",
+            "c": "amarillo"
+          }
+        ],
+        "arte": "palomito",
+        "fondo": "#1F3B8A",
+        "globo": "¡OJO!"
+      }
+    },
+    {
+      "texto": "Reino Unido el 16, India el 17 y Estados Unidos el 18 de diciembre.",
+      "decir": "Reino Unido el dieciséis, India el diecisiete y Estados Unidos el dieciocho de diciembre.",
+      "escena": {
+        "tipo": "lista",
+        "titulo": "DICIEMBRE",
+        "items": [
+          "16 · Reino Unido",
+          "17 · India",
+          "18 · Estados Unidos"
+        ],
+        "fondo": "#7A2E12"
+      }
+    },
+    {
+      "texto": "En India ya vendió más de 800 mil boletos anticipados.",
+      "decir": "En India ya vendió más de ochocientos mil boletos anticipados.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 800,
+        "sufijo": " MIL",
+        "texto": "BOLETOS EN INDIA",
+        "arte": "cine_boleto",
+        "fondo": "#7A5A12"
+      }
+    },
+    {
+      "texto": "En más de 8.000 funciones.",
+      "decir": "En más de ocho mil funciones.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Preventa India",
+        "anio": "8.133 FUNCIONES",
+        "arte": "cine_palomitas",
+        "color": "#14532D",
+        "check": true,
+        "fondo": "#14532D"
+      }
+    },
+    {
+      "texto": "Y en Estados Unidos llega a más de 4.000 cines.",
+      "decir": "Y en Estados Unidos llega a más de cuatro mil cines.",
+      "escena": {
+        "tipo": "medallones",
+        "lineas": [
+          {
+            "t": "+4.000 CINES",
+            "c": "dorado"
+          }
+        ],
+        "fondo": "#4B1F7A",
+        "items": [
+          {
+            "arte": "cine_lentes3d",
+            "texto": "3D",
+            "color": "#1F3B8A"
+          },
+          {
+            "arte": "cine_vaso",
+            "texto": "PREVENTA",
+            "color": "#8A1F2B"
+          },
+          {
+            "arte": "cine_rollo",
+            "texto": "150 MIN",
+            "color": "#0E5E6F"
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Revisa tu cartelera... porque no se estrena el mismo día en todo el mundo.",
+      "decir": "Revisa tu cartelera... porque no se estrena el mismo día en todo el mundo.",
+      "escenas": [
+        {
+          "tipo": "dos_fichas",
+          "titulo": "PRIMERO",
+          "fondo": "#3A3F55",
+          "fichas": [
+            {
+              "titulo": "Reino Unido",
+              "anio": "16 DIC",
+              "arte": "cine_boleto",
+              "color": "#1F3B8A",
+              "check": true
+            },
+            {
+              "titulo": "EE. UU.",
+              "anio": "18 DIC",
+              "arte": "cine_claqueta",
+              "color": "#8A1F2B",
+              "check": false
+            }
+          ]
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

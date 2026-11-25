@@ -1,0 +1,139 @@
+{
+  "id": "H-20261125-06",
+  "publicacion": {
+    "titulo_youtube": "Kate Bishop confirmada en Doomsday 🏹 ¿Llegan los Jóvenes Vengadores? #shorts",
+    "descripcion": "Hailee Steinfeld recibió su silla de Avengers: Doomsday: Kate Bishop vuelve al UCM 🏹\n\n¿Quieres ver a los Jóvenes Vengadores? 👇\n\n#marvel #katebishop #haileesteinfeld #hawkeye #youngavengers #avengersdoomsday #shorts",
+    "texto_tiktok": "Kate Bishop está en Doomsday 🏹 ¿Quieres ver a los Jóvenes Vengadores? 👇 #marvel #katebishop #haileesteinfeld #hawkeye #youngavengers #avengersdoomsday",
+    "tags": [
+      "marvel",
+      "kate bishop",
+      "hailee steinfeld",
+      "young avengers",
+      "avengers doomsday"
+    ]
+  },
+  "fuentes": [
+    "https://www.gamesradar.com/entertainment/marvel-movies/avengers-doomsday-adds-one-more-cast-chair-reveal-and-its-a-potential-young-avenger/",
+    "https://abcnews.com/GMA/Culture/avengers-doomsday-final-trailer-released/story?id=138375955"
+  ],
+  "bloques": [
+    {
+      "texto": "Una silla más en Avengers: Doomsday... y es de Kate Bishop.",
+      "decir": "Una silla más en Avéngers: Dúmsdei... y es de Kéit Bíshop.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "NUEVA SILLA",
+          {
+            "t": "KATE BISHOP",
+            "c": "amarillo"
+          }
+        ],
+        "arte": "palomito",
+        "fondo": "#4B1F7A",
+        "globo": "¡SORPRESA!"
+      }
+    },
+    {
+      "texto": "Hailee Steinfeld bromeó que le llevaron una silla de otra película.",
+      "decir": "Jéili Stáinfeld bromeó que le llevaron una silla de otra película.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Hailee Steinfeld",
+        "anio": "KATE BISHOP",
+        "arte": "estrella",
+        "color": "#4B1F7A",
+        "check": true,
+        "fondo": "#4B1F7A"
+      }
+    },
+    {
+      "texto": "Además aparece en el tráiler final.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 3,
+        "sufijo": " MIN",
+        "texto": "TRÁILER FINAL",
+        "arte": "cine_rollo",
+        "fondo": "#7A2E12"
+      }
+    },
+    {
+      "texto": "Y ya está confirmada Cassie Lang, de Kathryn Newton.",
+      "decir": "Y ya está confirmada Cási Lang, de Kázrin Niúton.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "JÓVENES HÉROES",
+        "fondo": "#0E5E6F",
+        "fichas": [
+          {
+            "titulo": "Kate Bishop",
+            "anio": "CONFIRMADA",
+            "arte": "estrella",
+            "color": "#4B1F7A",
+            "check": true
+          },
+          {
+            "titulo": "Cassie Lang",
+            "anio": "CONFIRMADA",
+            "arte": "planeta",
+            "color": "#8A1F2B",
+            "check": true
+          }
+        ]
+      }
+    },
+    {
+      "texto": "¿Jóvenes Vengadores? Por ahora es solo teoría de fans.",
+      "decir": "¿Jóvenes Vengadores? Por ahora es solo teoría de fans.",
+      "escena": {
+        "tipo": "lista",
+        "titulo": "¿YOUNG AVENGERS?",
+        "items": [
+          "Kate Bishop: sí",
+          "Cassie Lang: sí",
+          "¿Los demás?"
+        ],
+        "fondo": "#3A3F55",
+        "globo": "SOLO TEORÍA",
+        "globo_tipo": "nube"
+      }
+    },
+    {
+      "texto": "Lo sabremos el 18 de diciembre... cuando se siente en esa silla.",
+      "decir": "Lo sabremos el dieciocho de diciembre... cuando se siente en esa silla.",
+      "escenas": [
+        {
+          "tipo": "medallones",
+          "lineas": [
+            {
+              "t": "18 DIC",
+              "c": "dorado"
+            }
+          ],
+          "fondo": "#1F3B8A",
+          "items": [
+            {
+              "arte": "estrella",
+              "texto": "KATE",
+              "color": "#4B1F7A"
+            },
+            {
+              "arte": "planeta",
+              "texto": "CASSIE",
+              "color": "#8A1F2B"
+            },
+            {
+              "arte": "interrogacion",
+              "texto": "¿QUIÉN MÁS?",
+              "color": "#3A3F55"
+            }
+          ]
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

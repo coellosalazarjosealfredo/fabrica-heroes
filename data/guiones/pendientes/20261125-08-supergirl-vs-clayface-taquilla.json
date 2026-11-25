@@ -1,0 +1,131 @@
+{
+  "id": "H-20261125-08",
+  "publicacion": {
+    "titulo_youtube": "Supergirl vs Clayface: misma taquilla, destino opuesto 💸 #shorts",
+    "descripcion": "Supergirl y Clayface recaudaron casi lo mismo en 2026, pero una costó cuatro veces más 💸 Las cifras del DCU.\n\n¿Cuál de las dos viste en el cine? 👇\n\n#dc #dcu #supergirl #clayface #jamesgunn #taquilla #shorts",
+    "texto_tiktok": "Supergirl vs Clayface 💸 misma taquilla, destinos opuestos. ¿Cuál de las dos viste en el cine? 👇 #dc #dcu #supergirl #clayface #jamesgunn #taquilla",
+    "tags": [
+      "dc",
+      "dcu",
+      "supergirl",
+      "clayface",
+      "taquilla"
+    ]
+  },
+  "fuentes": [
+    "https://www.the-numbers.com/movies/franchise/DC-Universe",
+    "https://www.gamesradar.com/entertainment/dc-movies/supergirls-theatrical-run-has-officially-ended-and-the-new-dcu-movie-made-less-than-morbius-and-joker-2/",
+    "https://comicbookmovie.com/batman/clayface/clayface-has-officially-passed-its-break-even-point-at-the-worldwide-box-office-a230869"
+  ],
+  "bloques": [
+    {
+      "texto": "Dos películas de DC recaudaron casi lo mismo... pero una fracasó.",
+      "decir": "Dos películas de Di Si recaudaron casi lo mismo... pero una fracasó.",
+      "escena": {
+        "tipo": "versus",
+        "titulo": "DCU 2026",
+        "a": {
+          "titulo": "Supergirl",
+          "anio": "JUNIO",
+          "arte": "estrella",
+          "color": "#8A1F2B"
+        },
+        "b": {
+          "titulo": "Clayface",
+          "anio": "SEPTIEMBRE",
+          "arte": "calavera",
+          "color": "#3A3F55"
+        }
+      }
+    },
+    {
+      "texto": "Supergirl, en junio: unos 126 millones de dólares en el mundo.",
+      "decir": "Súpergörl, en junio: unos ciento veintiséis millones de dólares en el mundo.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Supergirl",
+        "anio": "2026",
+        "arte": "estrella",
+        "color": "#8A1F2B",
+        "cifra": "US$ 126 MILLONES",
+        "check": false,
+        "fondo": "#8A1F2B"
+      }
+    },
+    {
+      "texto": "Clayface, en septiembre: también unos 126 millones.",
+      "decir": "Cléifeis, en septiembre: también unos ciento veintiséis millones.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "CLAYFACE",
+          {
+            "t": "US$ 126 M",
+            "c": "verde"
+          }
+        ],
+        "arte": "dinero",
+        "fondo": "#3A3F55"
+      }
+    },
+    {
+      "texto": "La diferencia: Supergirl costó 170 millones.",
+      "decir": "La diferencia: Súpergörl costó ciento setenta millones.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 170,
+        "prefijo": "US$ ",
+        "sufijo": " M",
+        "texto": "COSTO SUPERGIRL",
+        "arte": "fuego",
+        "fondo": "#7A2E12"
+      }
+    },
+    {
+      "texto": "Clayface costó solo 40... cuatro veces menos.",
+      "decir": "Cléifeis costó solo cuarenta... cuatro veces menos.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "PRESUPUESTO",
+        "fondo": "#14532D",
+        "fichas": [
+          {
+            "titulo": "Supergirl",
+            "anio": "US$ 170 M",
+            "arte": "estrella",
+            "color": "#8A1F2B",
+            "check": false
+          },
+          {
+            "titulo": "Clayface",
+            "anio": "US$ 40 M",
+            "arte": "calavera",
+            "color": "#14532D",
+            "check": true
+          }
+        ],
+        "pie": "4 VECES MENOS",
+        "pie_color": "verde"
+      }
+    },
+    {
+      "texto": "Supergirl fue la DC más baja desde Catwoman... con lo mismo que recaudó Clayface.",
+      "decir": "Súpergörl fue la Di Si más baja desde Cátuoman... con lo mismo que recaudó Cléifeis.",
+      "escenas": [
+        {
+          "tipo": "lista",
+          "titulo": "LA LECCIÓN",
+          "items": [
+            "Misma taquilla",
+            "Costos opuestos",
+            "Un éxito y un fracaso"
+          ],
+          "fondo": "#4B1F7A"
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}
