@@ -211,6 +211,52 @@ def paso_programar():
     resumen(f"\nGuiones pendientes: **{restantes}**")
     return 0
 
+def paso_estadisticas():
+    """Junta las métricas de los últimos 21 días (YouTube por Zernio, TikTok por Buffer) en data/estadisticas.json."""
+    filas = [json.loads(l) for l in open(REGISTRO, encoding="utf-8") if l.strip()] if os.path.exists(REGISTRO) else []
+    por_yt = {f.get("youtube_post"): f for f in filas if f.get("youtube_post")}
+    por_tk = {f.get("tiktok_post"): f for f in filas if f.get("tiktok_post")}
+    salida = {}
+    def fila(f):
+        k = f.get("guion"); 
+        if k not in salida:
+            ruta = os.path.join(HECHOS, k or "")
+            tema = ""
+            try: tema = json.load(open(ruta, encoding="utf-8")).get("publicacion", {}).get("titulo_youtube", "")
+            except Exception: pass
+            salida[k] = {"guion": k, "titulo": tema, "programado": f.get("programado"), "youtube": None, "tiktok": None}
+        return salida[k]
+    hoy = dt.date.today()
+    if env("ZERNIO_API_KEY"):
+        try:
+            r = zernio._req("GET", f"/analytics?platform=youtube&fromDate={hoy - dt.timedelta(days=21)}&toDate={hoy}", env("ZERNIO_API_KEY"))
+            for p in r.get("posts", []):
+                f = por_yt.get(p.get("_id"))
+                if f: fila(f)["youtube"] = dict(p.get("analytics", {}), url=p.get("platformPostUrl"))
+        except Exception as e: print("YouTube (Zernio):", e)
+    if env("BUFFER_API_KEY"):
+        try:
+            tk = id_canal("tiktok", "TIKTOK_CHANNEL_ID")
+            org = gql("query { account { organizations { id } } }")["account"]["organizations"][0]["id"]
+            q = """query($i: PostsInput!, $a: String) { posts(first: 50, after: $a, input: $i) {
+                     edges { node { id dueAt metrics { name value } } } pageInfo { endCursor hasNextPage } } }"""
+            cur = None
+            for _ in range(6):
+                d = gql(q, {"i": {"organizationId": org, "filter": {"status": ["sent"], "channelIds": [tk]}}, "a": cur})["posts"]
+                for ed in d["edges"]:
+                    n = ed["node"]; f = por_tk.get(n["id"])
+                    if f: fila(f)["tiktok"] = {m["name"]: m["value"] for m in (n.get("metrics") or [])}
+                if not d["pageInfo"]["hasNextPage"]: break
+                cur = d["pageInfo"]["endCursor"]
+        except Exception as e: print("TikTok (Buffer):", e)
+    lista = sorted(salida.values(), key=lambda x: x.get("programado") or "", reverse=True)
+    json.dump({"actualizado": dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"), "videos": lista},
+              open(os.path.join(DATA, "estadisticas.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    def v(x, k): return (x or {}).get(k, "—")
+    resumen("## Estadísticas (21 días)\n\n| Video | YouTube vistas | TikTok |\n|---|---|---|\n" +
+            "\n".join(f"| {x['titulo'] or x['guion']} | {v(x['youtube'], 'views')} | {json.dumps(x['tiktok'], ensure_ascii=False) if x['tiktok'] else '—'} |" for x in lista[:30]))
+    return 0
+
 def paso_canales():
     if not env("BUFFER_API_KEY"): sys.exit("Falta el secreto BUFFER_API_KEY")
     cs = canales()
@@ -219,4 +265,4 @@ def paso_canales():
 
 if __name__ == "__main__":
     paso = env("PASO", "producir")
-    sys.exit({"producir": paso_producir, "programar": paso_programar, "canales": paso_canales}[paso]())
+    sys.exit({"producir": paso_producir, "programar": paso_programar, "canales": paso_canales, "estadisticas": paso_estadisticas}[paso]())

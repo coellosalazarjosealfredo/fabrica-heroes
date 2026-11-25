@@ -5,12 +5,13 @@ on:
     paths: ["data/orden.json"]   # Claude sube una orden para lanzar una producción puntual
   schedule:
     - cron: "0 8 * * *"   # 03:00 en Ecuador (los guiones del día llegan antes)
+    - cron: "10 6 * * *"  # 01:10 en Ecuador: estadísticas para que el guionista aprenda qué funciona
   workflow_dispatch:
     inputs:
       modo:
         description: "completo = producir y programar · solo_render = solo videos para revisar · canales = ver IDs de Buffer"
         type: choice
-        options: [completo, solo_render, canales]
+        options: [completo, solo_render, canales, estadisticas]
         default: solo_render
       cantidad:
         description: "Cuántos videos producir"
@@ -46,6 +47,7 @@ jobs:
           IN_HOR: ${{ inputs.horarios }}
           V_CANT: ${{ vars.CANTIDAD }}
           V_HOR: ${{ vars.HORARIOS }}
+          SCHED: ${{ github.event.schedule }}
         run: |
           python3 - <<'PY'
           import json, os
@@ -55,6 +57,8 @@ jobs:
               o = json.load(open("data/orden.json"))
               modo, cant, hor = o.get("modo", "completo"), str(o.get("cantidad", 1)), o.get("horarios") or hor_def
               redes = o.get("redes", "youtube,tiktok")
+          elif ev == "schedule" and e.get("SCHED") == "10 6 * * *":
+              modo, cant, hor = "estadisticas", "0", hor_def
           elif ev == "schedule":
               modo, cant, hor = "completo", e.get("V_CANT") or "10", hor_def
           else:
@@ -64,6 +68,28 @@ jobs:
               f.write(f"modo={modo}\ncantidad={cant}\nhorarios={hor}\nredes={redes}\n")
           print(modo, cant, hor)
           PY
+
+  estadisticas:
+    needs: config
+    if: ${{ needs.config.outputs.modo == 'estadisticas' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Leer métricas
+        env:
+          PASO: estadisticas
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+          TIKTOK_CHANNEL_ID: ${{ vars.TIKTOK_CHANNEL_ID }}
+        run: python fabrica/publicar.py
+      - name: Guardar
+        run: |
+          git config user.name "fabrica-bot"
+          git config user.email "fabrica-bot@users.noreply.github.com"
+          git add data/estadisticas.json
+          git diff --cached --quiet || (git commit -m "Estadísticas $(date +%F)" && git pull --rebase -q && git push)
 
   canales:
     needs: config
@@ -81,7 +107,7 @@ jobs:
 
   producir:
     needs: config
-    if: ${{ needs.config.outputs.modo != 'canales' && needs.config.outputs.modo != 'reprogramar' }}
+    if: ${{ needs.config.outputs.modo != 'canales' && needs.config.outputs.modo != 'reprogramar' && needs.config.outputs.modo != 'estadisticas' }}
     runs-on: ubuntu-latest
     timeout-minutes: 300
     steps:

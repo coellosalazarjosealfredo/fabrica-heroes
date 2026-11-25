@@ -16,6 +16,16 @@ así que nómbralos con fecha y número: `20261125-01-tema-corto.json`.
 - **Ritmo dinámico:** un bloque cada 2–4 s; cambia de tipo de escena en cada bloque; usa `escenas` (lista)
   para meter 2 escenas en un bloque largo.
 
+## Estrategia de crecimiento (obligatoria)
+
+- **Cuenta regresiva a Avengers: Doomsday** (estreno 18-dic-2026): hasta esa fecha, el guion `NN=01` de cada día es
+  "Faltan X días para Doomsday: …" con un dato nuevo y verificado. Primer bloque: escena `titulo` con `numero` = días que faltan
+  (contados desde la fecha de publicación) y `serie` = `{"texto": "CUENTA REGRESIVA DOOMSDAY", "total": <días que faltaban el 25-nov>}`.
+- **Series en partes:** si un tema da para más, divídelo en "Parte 1" y "Parte 2" (mismo día, horarios seguidos) y termina la parte 1
+  con un cierre que invite a ver la siguiente sin pedir follow ("la parte 2 es todavía más loca…").
+- **Pregunta para comentar** al final de `descripcion` y `texto_tiktok` (nunca en la voz): "¿Cuál te falta por ver? 👇".
+- **Aprende de los números:** si existe `data/estadisticas.json`, repite los formatos y temas con más vistas y abandona los de menos.
+
 ## Estructura
 
 ```json
