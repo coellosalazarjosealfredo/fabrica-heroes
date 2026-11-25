@@ -740,6 +740,8 @@ def dibujar_recurso(ctx, nombre, cx, cy, s, t=0):
     if not r: return False
     img = r[0]; w, h = img.get_width(), img.get_height()
     esc = (s * 2.1) / max(w, h)
+    xx, yx, xy, yy, _, _ = ctx.get_matrix()
+    if abs(xx * yy - xy * yx) * esc * esc < 1e-4: return True  # casi invisible (animación de entrada): evita OOM de cairo
     bob = math.sin(t * 2.5) * s * 0.03
     ctx.save(); ctx.translate(cx - w * esc / 2, cy - h * esc / 2 + bob); ctx.scale(esc, esc)
     grosor = 9 / esc
