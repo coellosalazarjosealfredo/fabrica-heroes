@@ -164,6 +164,7 @@ jobs:
           YOUTUBE_CHANNEL_ID: ${{ vars.YOUTUBE_CHANNEL_ID }}
           TIKTOK_CHANNEL_ID: ${{ vars.TIKTOK_CHANNEL_ID }}
           VISIBILIDAD: ${{ vars.VISIBILIDAD || 'public' }}
+          YOUTUBE_HORARIOS: ${{ vars.YOUTUBE_HORARIOS || '13:00,21:00' }}
         run: python fabrica/publicar.py
       - name: Registrar guiones usados
         if: always()

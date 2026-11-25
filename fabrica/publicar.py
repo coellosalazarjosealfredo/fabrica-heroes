@@ -16,6 +16,7 @@ Variables de entorno:
   ZONA_HORARIA          "America/Guayaquil"
   URL_SITIO             https://<usuario>.github.io/<repo>  (la pone el workflow)
   VISIBILIDAD           public | unlisted | private  (YouTube)
+  YOUTUBE_HORARIOS      horarios que también van a YouTube (Buffer gratis: 2 por día). "todos" = todos.
 """
 import datetime as dt, json, os, shutil, sys, time, urllib.request, urllib.error
 from zoneinfo import ZoneInfo
@@ -144,7 +145,11 @@ def paso_programar():
         fila = {"guion": m["guion"], "id": m.get("id"), "url": url, "programado": cuando.isoformat(timespec="minutes")}
         if not accesible(url):
             fila["error"] = "el video no está accesible en GitHub Pages"; filas.append(fila); continue
-        if yt:
+        hhmm = cuando.strftime("%H:%M")
+        yt_hor = env("YOUTUBE_HORARIOS", "13:00,21:00")
+        if yt and yt_hor != "todos" and hhmm not in [h.strip() for h in yt_hor.split(",")]:
+            fila["youtube_error"] = "solo TikTok en este horario (límite diario de YouTube en Buffer)"
+        elif yt:
           try:
             p = crear_post(yt, pub.get("descripcion", ""), url, utc,
                            {"youtube": {"title": (pub.get("titulo_youtube") or pub.get("titulo") or "")[:100], "categoryId": "1",
