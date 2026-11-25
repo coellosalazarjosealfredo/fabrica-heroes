@@ -12,7 +12,7 @@ Variables de entorno:
   YOUTUBE_CHANNEL_ID    ID del canal de YouTube en Buffer (si falta y hay uno solo, se detecta)
   TIKTOK_CHANNEL_ID     ID del canal de TikTok en Buffer (igual)
   CANTIDAD              cuántos videos por día (por defecto = nº de horarios)
-  HORARIOS              "07:00,09:00,11:00,13:00,15:00,17:00,19:00,21:00"
+  HORARIOS              "07:00,08:30,10:00,11:30,13:00,14:30,16:00,17:30,19:00,20:30"
   ZONA_HORARIA          "America/Guayaquil"
   URL_SITIO             https://<usuario>.github.io/<repo>  (la pone el workflow)
   VISIBILIDAD           public | unlisted | private  (YouTube)
@@ -20,6 +20,9 @@ Variables de entorno:
 """
 import datetime as dt, json, os, shutil, sys, time, urllib.request, urllib.error
 from zoneinfo import ZoneInfo
+import tempfile
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import zernio
 
 RAIZ = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATA = os.path.join(RAIZ, "data")
@@ -77,6 +80,29 @@ def crear_post(canal, texto, url_video, cuando_utc, meta):
     if "message" in r and "post" not in r: raise RuntimeError(r["message"])
     return r["post"]
 
+# ---------------------------------------------------------------- Zernio (YouTube)
+def zernio_youtube_id():
+    if env("ZERNIO_YOUTUBE_ID"): return env("ZERNIO_YOUTUBE_ID")
+    r = zernio.cuentas(env("ZERNIO_API_KEY")); lista = r.get("accounts", r) if isinstance(r, dict) else r
+    yts = [a for a in lista if a.get("platform") == "youtube"]
+    if len(yts) == 1: return yts[0]["_id"]
+    sys.exit(f"Define la variable ZERNIO_YOUTUBE_ID: hay {len(yts)} canales de YouTube en Zernio.")
+
+def zernio_post_youtube(cuenta, url_video, cuando, zona, pub):
+    clave = env("ZERNIO_API_KEY")
+    tmp = os.path.join(tempfile.gettempdir(), os.path.basename(url_video))
+    urllib.request.urlretrieve(url_video, tmp)
+    url_z = zernio.subir(tmp, "video/mp4", clave)
+    titulo = (pub.get("titulo_youtube") or pub.get("titulo") or "")[:100]
+    cuerpo = {"content": pub.get("descripcion", ""), "title": titulo, "tags": pub.get("tags", []),
+              "scheduledFor": cuando.strftime("%Y-%m-%dT%H:%M:%S"), "timezone": zona, "publishNow": False,
+              "mediaItems": [{"type": "video", "url": url_z}],
+              "platforms": [{"platform": "youtube", "accountId": cuenta, "customContent": pub.get("descripcion", ""),
+                             "platformSpecificData": {"title": titulo, "visibility": env("VISIBILIDAD", "public"), "madeForKids": False}}]}
+    r = zernio.crear_post(cuerpo, clave)
+    post = r.get("post", r) if isinstance(r, dict) else {}
+    return post.get("_id") or "ok"
+
 # ---------------------------------------------------------------- pasos
 def horarios_hoy(horarios, zona):
     tz = ZoneInfo(zona); ahora = dt.datetime.now(tz); out = []
@@ -90,7 +116,7 @@ def horarios_hoy(horarios, zona):
 def paso_producir():
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import motor
-    horarios = [h.strip() for h in env("HORARIOS", "07:00,09:00,11:00,13:00,15:00,17:00,19:00,21:00").split(",") if h.strip()]
+    horarios = [h.strip() for h in env("HORARIOS", "07:00,08:30,10:00,11:30,13:00,14:30,16:00,17:30,19:00,20:30").split(",") if h.strip()]
     cantidad = int(env("CANTIDAD", str(len(horarios))) or len(horarios))
     for d in (PEND, HECHOS, TRABAJO, os.path.join(SITIO, "v")): os.makedirs(d, exist_ok=True)
     archivos = sorted(f for f in os.listdir(PEND) if f.endswith(".json"))[:cantidad]
@@ -127,14 +153,18 @@ def accesible(url, intentos=20):
     return False
 
 def paso_programar():
-    if not env("BUFFER_API_KEY"): sys.exit("Falta el secreto BUFFER_API_KEY")
+    if not env("BUFFER_API_KEY") and not env("ZERNIO_API_KEY"): sys.exit("Falta el secreto BUFFER_API_KEY")
     for d in (PEND, HECHOS): os.makedirs(d, exist_ok=True)
     manifiesto = json.load(open(MANIF, encoding="utf-8")) if os.path.exists(MANIF) else []
     if not manifiesto: resumen("Nada que programar."); return 0
     zona = env("ZONA_HORARIA", "America/Guayaquil")
-    horarios = [h.strip() for h in env("HORARIOS", "07:00,09:00,11:00,13:00,15:00,17:00,19:00,21:00").split(",") if h.strip()]
+    horarios = [h.strip() for h in env("HORARIOS", "07:00,08:30,10:00,11:30,13:00,14:30,16:00,17:30,19:00,20:30").split(",") if h.strip()]
     slots = horarios_hoy(horarios, zona)
-    yt, tk = id_canal("youtube", "YOUTUBE_CHANNEL_ID"), id_canal("tiktok", "TIKTOK_CHANNEL_ID")
+    redes = [r.strip() for r in env("REDES", "youtube,tiktok").split(",")]
+    usar_zernio = bool(env("ZERNIO_API_KEY"))
+    zyt = zernio_youtube_id() if (usar_zernio and "youtube" in redes) else None
+    yt = None if (usar_zernio or "youtube" not in redes) else id_canal("youtube", "YOUTUBE_CHANNEL_ID")
+    tk = id_canal("tiktok", "TIKTOK_CHANNEL_ID") if "tiktok" in redes else None
     base = env("URL_SITIO").rstrip("/")
     filas = []
     for i, m in enumerate(manifiesto):
@@ -147,7 +177,11 @@ def paso_programar():
             fila["error"] = "el video no está accesible en GitHub Pages"; filas.append(fila); continue
         hhmm = cuando.strftime("%H:%M")
         yt_hor = env("YOUTUBE_HORARIOS", "13:00,21:00")
-        if yt and yt_hor != "todos" and hhmm not in [h.strip() for h in yt_hor.split(",")]:
+        if zyt:
+            try: fila["youtube_post"] = zernio_post_youtube(zyt, url, cuando, zona, pub)
+            except Exception as e: fila["youtube_error"] = "Zernio: " + str(e)[:280]
+        elif "youtube" not in redes: fila["youtube_post"] = "(no solicitado)"
+        elif yt and yt_hor != "todos" and hhmm not in [h.strip() for h in yt_hor.split(",")]:
             fila["youtube_error"] = "solo TikTok en este horario (límite diario de YouTube en Buffer)"
         elif yt:
           try:
@@ -162,6 +196,7 @@ def paso_programar():
             p = crear_post(tk, pub.get("texto_tiktok") or pub.get("descripcion", ""), url, utc, {"tiktok": {"isAiGenerated": True}})
             fila["tiktok_post"] = p["id"]
           except Exception as e: fila["tiktok_error"] = str(e)[:300]
+        elif "tiktok" not in redes: fila["tiktok_post"] = "(no solicitado)"
         else: fila["tiktok_error"] = "sin canal en Buffer"
         ok = "youtube_post" in fila or "tiktok_post" in fila
         if ok and os.path.exists(os.path.join(PEND, m["guion"])):

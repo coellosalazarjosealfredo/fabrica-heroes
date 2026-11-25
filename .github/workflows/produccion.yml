@@ -35,6 +35,7 @@ jobs:
       modo: ${{ steps.c.outputs.modo }}
       cantidad: ${{ steps.c.outputs.cantidad }}
       horarios: ${{ steps.c.outputs.horarios }}
+      redes: ${{ steps.c.outputs.redes }}
     steps:
       - uses: actions/checkout@v4
       - id: c
@@ -49,16 +50,18 @@ jobs:
           python3 - <<'PY'
           import json, os
           e = os.environ; ev = e["EVENTO"]
-          hor_def = e.get("V_HOR") or "07:00,09:00,11:00,13:00,15:00,17:00,19:00,21:00"
+          hor_def = e.get("V_HOR") or "07:00,08:30,10:00,11:30,13:00,14:30,16:00,17:30,19:00,20:30"
           if ev == "push":
               o = json.load(open("data/orden.json"))
               modo, cant, hor = o.get("modo", "completo"), str(o.get("cantidad", 1)), o.get("horarios") or hor_def
+              redes = o.get("redes", "youtube,tiktok")
           elif ev == "schedule":
-              modo, cant, hor = "completo", e.get("V_CANT") or "8", hor_def
+              modo, cant, hor = "completo", e.get("V_CANT") or "10", hor_def
           else:
               modo, cant, hor = e["IN_MODO"], e["IN_CANT"] or "1", e.get("IN_HOR") or hor_def
+          redes = locals().get("redes", "youtube,tiktok")
           with open(e["GITHUB_OUTPUT"], "a") as f:
-              f.write(f"modo={modo}\ncantidad={cant}\nhorarios={hor}\n")
+              f.write(f"modo={modo}\ncantidad={cant}\nhorarios={hor}\nredes={redes}\n")
           print(modo, cant, hor)
           PY
 
@@ -165,6 +168,9 @@ jobs:
           TIKTOK_CHANNEL_ID: ${{ vars.TIKTOK_CHANNEL_ID }}
           VISIBILIDAD: ${{ vars.VISIBILIDAD || 'public' }}
           YOUTUBE_HORARIOS: ${{ vars.YOUTUBE_HORARIOS || '13:00,21:00' }}
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+          ZERNIO_YOUTUBE_ID: ${{ vars.ZERNIO_YOUTUBE_ID }}
+          REDES: ${{ needs.config.outputs.redes }}
         run: python fabrica/publicar.py
       - name: Registrar guiones usados
         if: always()
