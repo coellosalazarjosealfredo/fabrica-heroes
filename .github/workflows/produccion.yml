@@ -78,7 +78,7 @@ jobs:
 
   producir:
     needs: config
-    if: ${{ needs.config.outputs.modo != 'canales' }}
+    if: ${{ needs.config.outputs.modo != 'canales' && needs.config.outputs.modo != 'reprogramar' }}
     runs-on: ubuntu-latest
     timeout-minutes: 300
     steps:
@@ -140,21 +140,26 @@ jobs:
 
   programar:
     needs: [config, desplegar]
+    if: ${{ always() && (needs.desplegar.result == 'success' || needs.config.outputs.modo == 'reprogramar') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
       - uses: actions/download-artifact@v4
+        if: ${{ needs.config.outputs.modo != 'reprogramar' }}
         with:
           name: manifiesto
           path: data
+      - name: Manifiesto desde la orden (reprogramar)
+        if: ${{ needs.config.outputs.modo == 'reprogramar' }}
+        run: python3 -c "import json; json.dump(json.load(open('data/orden.json'))['manifiesto'], open('data/manifiesto.json','w'), ensure_ascii=False)"
       - name: Programar en Buffer
         env:
           PASO: programar
           HORARIOS: ${{ needs.config.outputs.horarios }}
           ZONA_HORARIA: ${{ vars.ZONA_HORARIA || 'America/Guayaquil' }}
-          URL_SITIO: ${{ needs.desplegar.outputs.url }}
+          URL_SITIO: ${{ needs.desplegar.outputs.url || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           YOUTUBE_CHANNEL_ID: ${{ vars.YOUTUBE_CHANNEL_ID }}
           TIKTOK_CHANNEL_ID: ${{ vars.TIKTOK_CHANNEL_ID }}

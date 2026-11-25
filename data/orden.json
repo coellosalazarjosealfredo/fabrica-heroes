@@ -1,1 +1,42 @@
-{"modo": "completo", "cantidad": 3, "horarios": "21:00,22:00,23:00", "nota": "Primeros 3 videos (24-nov-2026)"}
+{
+ "modo": "reprogramar",
+ "horarios": "22:00,23:00",
+ "nota": "Programar los videos 2 y 3 del 24-nov (ya producidos)",
+ "manifiesto": [
+  {
+   "guion": "0002-top5-taquilla-marvel.json",
+   "id": "H-0002",
+   "ruta_sitio": "v/H-0002-202611250010.mp4",
+   "duracion": 20.15,
+   "publicacion": {
+    "titulo_youtube": "La película de Marvel que más dinero ha hecho 💰 #shorts",
+    "descripcion": "Top 5 de las películas más taquilleras del UCM 💰🎬\n\n#marvel #endgame #infinitywar #spiderman #avengers #ucm #taquilla #shorts",
+    "texto_tiktok": "¿Cuál es la película de Marvel más taquillera? 💰 #marvel #endgame #avengers #ucm #taquilla #superheroes",
+    "tags": [
+     "marvel",
+     "taquilla",
+     "endgame",
+     "ucm",
+     "avengers"
+    ]
+   }
+  },
+  {
+   "guion": "0003-gemas-del-infinito.json",
+   "id": "H-0003",
+   "ruta_sitio": "v/H-0003-202611250022.mp4",
+   "duracion": 16.27,
+   "publicacion": {
+    "titulo_youtube": "¿Dónde estaba cada Gema del Infinito? 💎 #shorts",
+    "descripcion": "Las 6 Gemas del Infinito y dónde se escondía cada una en el UCM 💎\n\n#marvel #gemasdelinfinito #thanos #avengers #ucm #superheroes #shorts",
+    "texto_tiktok": "¿Dónde estaba cada Gema del Infinito? 💎 #marvel #gemasdelinfinito #thanos #avengers #ucm",
+    "tags": [
+     "marvel",
+     "gemas del infinito",
+     "thanos",
+     "ucm"
+    ]
+   }
+  }
+ ]
+}

@@ -127,6 +127,7 @@ def accesible(url, intentos=20):
 
 def paso_programar():
     if not env("BUFFER_API_KEY"): sys.exit("Falta el secreto BUFFER_API_KEY")
+    for d in (PEND, HECHOS): os.makedirs(d, exist_ok=True)
     manifiesto = json.load(open(MANIF, encoding="utf-8")) if os.path.exists(MANIF) else []
     if not manifiesto: resumen("Nada que programar."); return 0
     zona = env("ZONA_HORARIA", "America/Guayaquil")
@@ -159,7 +160,8 @@ def paso_programar():
         else: fila["tiktok_error"] = "sin canal en Buffer"
         ok = "youtube_post" in fila or "tiktok_post" in fila
         if ok and os.path.exists(os.path.join(PEND, m["guion"])):
-            shutil.move(os.path.join(PEND, m["guion"]), os.path.join(HECHOS, m["guion"]))
+            try: shutil.move(os.path.join(PEND, m["guion"]), os.path.join(HECHOS, m["guion"]))
+            except Exception as e: print("  (no pude archivar el guion:", e, ")")
         filas.append(fila)
         with open(REGISTRO, "a", encoding="utf-8") as f: f.write(json.dumps(fila, ensure_ascii=False) + "\n")
     lineas = [f"| {f['guion']} | {f['programado']} | {'✅' if f.get('youtube_post') else '❌ ' + f.get('youtube_error', f.get('error', ''))[:80]} | "
