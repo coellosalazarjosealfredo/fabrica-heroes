@@ -127,16 +127,20 @@ def esc_medallones(ctx, e, lt, gt, dur, idx):
                  pop=ease_out_back((lt - j * 0.09) / 0.3))
 
 def esc_cifra(ctx, e, lt, gt, dur, idx):
+    kx = ease_out_back((lt - 0.05) / 0.35)
+    if kx > 0:
+        ctx.save(); ctx.translate(CX, 860); ctx.scale(kx, kx)
+        explosion(ctx, 14, 12, 345, RED, t=gt, semilla=7); explosion(ctx, 0, 0, 305, YEL, t=gt, semilla=3); ctx.restore()
     if e.get("texto"):
         k = ease_out_back(lt / 0.3)
-        ctx.save(); ctx.translate(CX, 560); ctx.scale(k, k); glow_text(ctx, e["texto"], 0, 0, 104, WHITE, (1, 1, 1), chrome=True, maxw=880); ctx.restore()
+        ctx.save(); ctx.translate(CX, 520); ctx.scale(k, k); glow_text(ctx, e["texto"], 0, 0, 104, WHITE, (1, 1, 1), chrome=True, maxw=880); ctx.restore()
     if e.get("arte"):
-        ctx.save(); ctx.translate(CX, 1150); s = ease_out_back((lt - 0.2) / 0.3); ctx.scale(s, s)
-        dibujar_arte(ctx, e["arte"], 0, 0, 170, gt); ctx.restore()
+        ctx.save(); ctx.translate(CX, 1210); s_ = ease_out_back((lt - 0.2) / 0.3); ctx.scale(s_, s_)
+        dibujar_arte(ctx, e["arte"], 0, 0, 150, gt); ctx.restore()
     v = float(e.get("valor", 0)); dec = int(e.get("decimales", 0))
     cur = v * ease_out(lt / 0.8)
-    s = f"{cur:,.{dec}f}".replace(",", "X").replace(".", ",").replace("X", ".")
-    glow_text(ctx, f"{e.get('prefijo', '')}{s}{e.get('sufijo', '')}", CX, 860, 210, GREEN, GREEN, maxw=880)
+    s2 = f"{cur:,.{dec}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    glow_text(ctx, f"{e.get('prefijo', '')}{s2}{e.get('sufijo', '')}", CX, 860, 190, GREEN, GREEN, maxw=560)
 
 def esc_versus(ctx, e, lt, gt, dur, idx):
     if e.get("titulo"): glow_text(ctx, e["titulo"], CX, 340, 110, WHITE, (1, 1, 1), chrome=True, maxw=880)
@@ -148,7 +152,7 @@ def esc_versus(ctx, e, lt, gt, dur, idx):
     k = ease_out_back((lt - 0.45) / 0.25)
     if k > 0:
         ctx.save(); ctx.translate(CX, 860); ctx.rotate(-0.12); ctx.scale(k, k)
-        art_rayo(ctx, 0, 0, 150, gt, YEL); glow_text(ctx, "VS", 0, 0, 170, WHITE, RED, font="Bangers"); ctx.restore()
+        explosion(ctx, 0, 0, 190, YEL, t=gt, semilla=11); glow_text(ctx, "VS", 0, 0, 170, WHITE, RED, font="Bangers"); ctx.restore()
 
 def esc_lista(ctx, e, lt, gt, dur, idx):
     if e.get("titulo"): glow_text(ctx, e["titulo"], CX, 360, 104, WHITE, (1, 1, 1), chrome=True, maxw=880)
@@ -311,9 +315,15 @@ def producir(g, carpeta, log=print, solo_frames=None):
             tk = 0.8 if tipo == "cifra" else 0.45
             if tk <= lt < tk + 0.35: sh = 16 * (1 - (lt - tk) / 0.35)
         ox = math.sin(gt * 90) * sh; oy = math.cos(gt * 77) * sh
-        background(ctx, dark(c, 0.82), dark(c, 0.5), gt, cy=860)
+        estilo = e.get("estilo_fondo") or g.get("estilo_fondo") or "comic"
+        if estilo == "comic": background_comic(ctx, c, gt, cy=860)
+        else: background(ctx, dark(c, 0.82), dark(c, 0.5), gt, cy=860)
         ctx.translate(CX + ox, 900 + oy); ctx.scale(z, z); ctx.translate(-CX, -900)
         ESCENAS.get(tipo, esc_titulo)(ctx, e, lt, gt, dur, i)
+        if e.get("globo"):
+            gp = ease_out_back((lt - 0.35) / 0.3)
+            gy = 640 if tipo in ("titulo", "protagonista") else 520
+            globo(ctx, e["globo"], CX + 190, gy, 430, 210, cola=(-1, 1), tipo=e.get("globo_tipo", "ovalo"), pop=gp)
         ctx.restore()
         b = g["bloques"][bi]
         if serie and b.get("paso"): series_bar(ctx, int(b["paso"]), int(serie.get("total", 5)), serie.get("texto", "").upper())

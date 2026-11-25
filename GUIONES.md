@@ -67,7 +67,10 @@ así que nómbralos con fecha y número: `20261125-01-tema-corto.json`.
 | `protagonista` | `personaje`, `lineas`, `cifra` o `etiqueta`, `arte` (respaldo) |
 | `bucle` | repite la primera escena (úsalo al final) |
 
-Campos comunes: `fondo` o `color` ("#1F3B8A"), `impacto` (true = sacudida).
+Campos comunes: `fondo` o `color` ("#1F3B8A"), `impacto` (true = sacudida),
+`globo` (texto corto de cómic, máx. ~22 caracteres, ej. "¡NO LO SABÍAS!", "¿SERÁ CIERTO?"), `globo_tipo` ("ovalo" o "nube").
+Usa `globo` en 1-2 escenas por video como máximo: en el gancho (sobre todo con `palomito`) y en remates o rumores.
+Las escenas `cifra` y `versus` ya llevan explosión de cómic automática.
 
 ## Personajes ilustrados (carpeta `personajes/`)
 

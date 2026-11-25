@@ -596,3 +596,94 @@ def dibujar_personaje(ctx, nombre, cx, cy, alto, version="busto", fallback="estr
     ctx.save(); ctx.translate(cx - w * esc / 2, cy - h * esc / 2); ctx.scale(esc, esc)
     ctx.set_source_surface(img, 0, 0); ctx.get_source().set_filter(cairo.FILTER_GOOD); ctx.paint(); ctx.restore()
     return True
+
+# ---------------- fondo estilo cómic (rayos + semitono), original ----------------
+import colorsys
+_CACHE_COMIC = {}
+
+def vivo(col):
+    h, sat, v = colorsys.rgb_to_hsv(*col)
+    if sat < 0.15: return colorsys.hsv_to_rgb(0.62, 0.35, 0.55)   # grises -> azul pizarra
+    return colorsys.hsv_to_rgb(h, max(sat, 0.85), 0.86)
+
+def _capas_comic(col):
+    key = tuple(round(x, 3) for x in col)
+    if key in _CACHE_COMIC: return _CACHE_COMIC[key]
+    cx, cy = CX, 860
+    base = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H); c = cairo.Context(base)
+    g = cairo.RadialGradient(cx, cy, 0, cx, cy, 1350)
+    g.add_color_stop_rgb(0, *light(col, 0.22)); g.add_color_stop_rgb(0.5, *col); g.add_color_stop_rgb(1, *dark(col, 0.35))
+    c.set_source(g); c.paint()
+    top = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H); c = cairo.Context(top)
+    paso = 24; dmax = math.hypot(W, H) / 1.6
+    c.set_source_rgba(*dark(col, 0.3), 0.5)
+    for y in range(0, H + paso, paso):
+        off = (paso / 2) if (y // paso) % 2 else 0
+        for x in range(-paso, W + paso, paso):
+            xx = x + off; d = math.hypot(xx - cx, y - cy) / dmax
+            r = paso * 0.5 * max(0, min(1, (d - 0.15) * 1.3))
+            if r > 0.6: c.new_sub_path(); c.arc(xx, y, r, 0, 6.2832)
+    c.fill()
+    gg = cairo.RadialGradient(cx, cy, 0, cx, cy, 360)
+    gg.add_color_stop_rgba(0, *light(col, 0.6), 0.6); gg.add_color_stop_rgba(1, *light(col, 0.6), 0)
+    c.set_source(gg); c.paint()
+    v = cairo.RadialGradient(cx, cy, 750, cx, cy, 1550)
+    v.add_color_stop_rgba(0, 0, 0, 0, 0); v.add_color_stop_rgba(1, 0, 0, 0, 0.5)
+    c.set_source(v); c.paint()
+    _CACHE_COMIC[key] = (base, top); return base, top
+
+def background_comic(ctx, col, t, cy=860, cx=CX):
+    col = vivo(col); base, top = _capas_comic(col)
+    ctx.set_source_surface(base, 0, 0); ctx.paint()
+    random.seed(5); n = 44; ang0 = t * 0.08
+    for i in range(n):
+        a = ang0 + i * 2 * math.pi / n + random.uniform(-0.03, 0.03)
+        w = random.uniform(0.012, 0.06)
+        ctx.move_to(cx, cy); ctx.line_to(cx + math.cos(a - w) * 2600, cy + math.sin(a - w) * 2600)
+        ctx.line_to(cx + math.cos(a + w) * 2600, cy + math.sin(a + w) * 2600); ctx.close_path()
+        ctx.set_source_rgba(*light(col, 0.4), random.uniform(0.2, 0.42)); ctx.fill()
+    ctx.set_source_surface(top, 0, 0); ctx.paint()
+
+# ---------------- globos de diálogo y explosiones de cómic (originales) ----------------
+def explosion(ctx, cx, cy, r, col=YEL, puntas=14, t=0, semilla=3, borde=10):
+    rnd = random.Random(semilla); pts = []
+    for i in range(puntas * 2):
+        a = i * math.pi / puntas + t * 0.4
+        rr = r * (1.0 if i % 2 == 0 else rnd.uniform(0.55, 0.7)) * (1 + 0.03 * math.sin(t * 8 + i))
+        pts.append((cx + math.cos(a) * rr, cy + math.sin(a) * rr * 0.82))
+    poly(ctx, pts); ctx.set_source_rgb(*col); ctx.fill_preserve()
+    ctx.set_line_join(cairo.LINE_JOIN_MITER); ctx.set_source_rgb(*BLACK); ctx.set_line_width(borde); ctx.stroke()
+
+def _nube(ctx, cx, cy, w, h, bultos=9):
+    for i in range(bultos):
+        a = i * 2 * math.pi / bultos
+        ctx.new_sub_path(); ctx.arc(cx + math.cos(a) * w * 0.38, cy + math.sin(a) * h * 0.32, min(w, h) * 0.3, 0, 6.2832)
+    ctx.new_sub_path(); ctx.save(); ctx.translate(cx, cy); ctx.scale(w * 0.42, h * 0.38); ctx.arc(0, 0, 1, 0, 6.2832); ctx.restore()
+
+def globo(ctx, texto, cx, cy, w, h, cola=(-1, 1), tipo="ovalo", sombra=hexc("#3FB4F0"), pop=1.0):
+    """Globo de diálogo blanco con contorno negro; cola apunta en dirección (dx, dy)."""
+    if pop <= 0: return
+    ctx.save(); ctx.translate(cx, cy); ctx.scale(pop, pop); ctx.translate(-cx, -cy)
+    tx, ty = cx + cola[0] * w * 0.32, cy + cola[1] * h * 0.62
+    def forma(dx=0, dy=0):
+        ctx.new_path()
+        if tipo == "nube": _nube(ctx, cx + dx, cy + dy, w, h)
+        else:
+            ctx.save(); ctx.translate(cx + dx, cy + dy); ctx.scale(w / 2, h / 2); ctx.arc(0, 0, 1, 0, 6.2832); ctx.restore()
+        ctx.move_to(cx + dx - w * 0.12, cy + dy + h * 0.3); ctx.line_to(tx + dx, ty + dy); ctx.line_to(cx + dx + w * 0.08, cy + dy + h * 0.36); ctx.close_path()
+    if sombra:
+        forma(-18, 14); ctx.set_source_rgb(*sombra); ctx.fill_preserve(); ctx.set_source_rgb(*BLACK); ctx.set_line_width(9); ctx.stroke()
+    forma(); ctx.set_source_rgb(*BLACK); ctx.set_line_width(18); ctx.stroke_preserve(); ctx.set_source_rgb(1, 1, 1); ctx.fill()
+    # texto (máx. 2 líneas)
+    pal = texto.upper().split(); lineas = [texto.upper()]
+    if len(texto) > 14 and len(pal) > 1:
+        mitad = len(texto) / 2; acc = 0; cut = 1
+        for i, p in enumerate(pal):
+            acc += len(p) + 1
+            if acc >= mitad: cut = i + 1; break
+        lineas = [" ".join(pal[:cut]), " ".join(pal[cut:])]
+    size = h * (0.3 if len(lineas) == 2 else 0.38)
+    for i, l in enumerate(lineas):
+        y = cy + (i - (len(lineas) - 1) / 2) * size * 1.05
+        text(ctx, l, cx, y, size, BLACK, stroke=0, maxw=w * 0.78)
+    ctx.restore()
