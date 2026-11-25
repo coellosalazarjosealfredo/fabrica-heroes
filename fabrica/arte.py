@@ -562,6 +562,37 @@ def medallon(ctx, cx, cy, r, arte, etiqueta, col, t, pop=1.0):
     g = cairo.RadialGradient(cx, cy - r * 0.3, 0, cx, cy, r); g.add_color_stop_rgb(0, *light(col, 0.15)); g.add_color_stop_rgb(1, *dark(col, 0.6))
     ctx.set_source(g); ctx.fill()
     ctx.save(); ctx.arc(cx, cy, r * 0.86, 0, 6.2832); ctx.clip()
-    dibujar_arte(ctx, arte, cx, cy, r * 0.5, t); ctx.restore()
+    if isinstance(arte, str) and arte.startswith("pj:"):
+        dibujar_personaje(ctx, arte[3:], cx, cy + r * 0.12, r * 1.75, "busto", t=t)
+    else:
+        dibujar_arte(ctx, arte, cx, cy, r * 0.5, t)
+    ctx.restore()
     if etiqueta and pop > 0.6:
         pill(ctx, etiqueta, cx, cy + r + 18, max(34, r * 0.3), col, fg=WHITE, padx=14, maxw=r * 2.3)
+
+
+# ---------------- personajes ilustrados (PNG en /personajes) ----------------
+_RAIZ_PJ = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personajes"))
+_CACHE_PJ = {}
+
+def ruta_personaje(nombre, version="busto"):
+    for v in (version, "cuerpo" if version == "busto" else "busto"):
+        r = os.path.join(_RAIZ_PJ, f"{nombre}-{v}.png")
+        if os.path.exists(r): return r
+    return None
+
+def personajes_disponibles():
+    if not os.path.isdir(_RAIZ_PJ): return []
+    return sorted({f.rsplit("-", 1)[0] for f in os.listdir(_RAIZ_PJ) if f.endswith((".png",)) and "-" in f})
+
+def dibujar_personaje(ctx, nombre, cx, cy, alto, version="busto", fallback="estrella", t=0):
+    """Dibuja el PNG del personaje centrado en (cx, cy) con altura `alto`. Si no existe, usa arte original."""
+    r = ruta_personaje(nombre, version)
+    if not r:
+        dibujar_arte(ctx, fallback, cx, cy, alto * 0.42, t); return False
+    if r not in _CACHE_PJ: _CACHE_PJ[r] = cairo.ImageSurface.create_from_png(r)
+    img = _CACHE_PJ[r]; w, h = img.get_width(), img.get_height()
+    esc = alto / h
+    ctx.save(); ctx.translate(cx - w * esc / 2, cy - h * esc / 2); ctx.scale(esc, esc)
+    ctx.set_source_surface(img, 0, 0); ctx.get_source().set_filter(cairo.FILTER_GOOD); ctx.paint(); ctx.restore()
+    return True

@@ -64,9 +64,16 @@ así que nómbralos con fecha y número: `20261125-01-tema-corto.json`.
 | `cifra` | `valor`, `prefijo`, `sufijo`, `decimales`, `texto`, `arte` |
 | `versus` | `titulo`, `a` (ficha), `b` (ficha) |
 | `lista` | `titulo`, `items` (2–5 textos cortos) |
+| `protagonista` | `personaje`, `lineas`, `cifra` o `etiqueta`, `arte` (respaldo) |
 | `bucle` | repite la primera escena (úsalo al final) |
 
 Campos comunes: `fondo` o `color` ("#1F3B8A"), `impacto` (true = sacudida).
+
+## Personajes ilustrados (carpeta `personajes/`)
+
+Si hay PNG en `personajes/` (`nombre-busto.png`, `nombre-cuerpo.png`), úsalos con `"personaje": "nombre"` en
+`ficha` (o `"personajes": ["a","b"]`, máx. 3), en cada item de `medallones`, en `titulo` y en `protagonista`.
+Usa SOLO nombres que existan en esa carpeta; pon siempre también un `arte` del catálogo como respaldo.
 
 ## Catálogo de `arte` (todo original)
 

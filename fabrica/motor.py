@@ -26,8 +26,13 @@ def linea_titulo(ctx, l, y, size, i):
 
 def ficha_dict(f, i, t):
     nombre = f.get("arte", "estrella")
-    return {"title": f.get("titulo", "").upper(), "year": str(f.get("anio", "")), "col": col(f.get("color"), i),
-            "art": lambda ctx, x, y, s, tt, n=nombre: dibujar_arte(ctx, n, x, y, s, tt)}
+    pjs = f.get("personajes") or ([f["personaje"]] if f.get("personaje") else [])
+    def arte_ficha(ctx, x, y, s, tt, n=nombre, pjs=pjs):
+        if not pjs: return dibujar_arte(ctx, n, x, y, s, tt)
+        k = len(pjs[:3]); paso = s * 1.6 / max(1, k)
+        for j, p in enumerate(pjs[:3]):
+            dibujar_personaje(ctx, p, x + (j - (k - 1) / 2) * paso * 1.05, y + s * 0.35, s * (2.6 if k == 1 else 2.1), "busto", fallback=n, t=tt)
+    return {"title": f.get("titulo", "").upper(), "year": str(f.get("anio", "")), "col": col(f.get("color"), i), "art": arte_ficha}
 
 # ---------------------------------------------------------------- escenas
 def esc_titulo(ctx, e, lt, gt, dur, idx):
@@ -42,7 +47,10 @@ def esc_titulo(ctx, e, lt, gt, dur, idx):
     if e.get("numero") is not None:
         ctx.save(); ctx.translate(CX, y0); ctx.scale(pop, pop)
         glow_text(ctx, str(e["numero"]), 0, 0, 520, GOLD, GOLD, font="Bangers"); ctx.restore()
-    if e.get("arte") and pop > 0:
+    if e.get("personaje") and pop > 0 and ruta_personaje(e["personaje"]):
+        ctx.save(); ctx.translate(CX, y0); ctx.scale(pop, pop)
+        dibujar_personaje(ctx, e["personaje"], 0, 0, 640, "cuerpo", t=gt); ctx.restore()
+    elif e.get("arte") and pop > 0:
         s = 300 if e.get("numero") is None else 140
         y = y0 if e.get("numero") is None else y0 + 330
         ctx.save(); ctx.translate(CX, y); ctx.scale(pop, pop); dibujar_arte(ctx, e["arte"], 0, 0, s, gt); ctx.restore()
@@ -115,7 +123,7 @@ def esc_medallones(ctx, e, lt, gt, dur, idx):
         fila = 0 if j < fila1 else 1
         en = fila1 if fila == 0 else n - fila1; pos = j if fila == 0 else j - fila1
         x = CX + (pos - (en - 1) / 2) * (r * 2 + 24); y = y1 + fila * (r * 2 + 90)
-        medallon(ctx, x, y, r, it.get("arte", "estrella"), it.get("texto", ""), col(it.get("color"), j), gt,
+        medallon(ctx, x, y, r, ("pj:" + it["personaje"]) if it.get("personaje") and ruta_personaje(it["personaje"]) else it.get("arte", "estrella"), it.get("texto", ""), col(it.get("color"), j), gt,
                  pop=ease_out_back((lt - j * 0.09) / 0.3))
 
 def esc_cifra(ctx, e, lt, gt, dur, idx):
@@ -161,8 +169,31 @@ def esc_lista(ctx, e, lt, gt, dur, idx):
         ctx.set_source_rgb(*BLACK); ctx.set_line_width(8); ctx.stroke_preserve(); ctx.set_source_rgb(1, 1, 1); ctx.fill()
         ctx.restore()
 
+def esc_protagonista(ctx, e, lt, gt, dur, idx):
+    """Personaje de cuerpo entero al centro con rayos, título arriba y cifra/etiqueta abajo."""
+    lineas = e.get("lineas", [])
+    for i, l in enumerate(lineas[:2]):
+        k = ease_out_back((lt - i * 0.08) / 0.3)
+        if k > 0:
+            ctx.save(); ctx.translate(CX, 330 + i * 125); ctx.scale(k, k); ctx.translate(-CX, -(330 + i * 125))
+            linea_titulo(ctx, l, 330 + i * 125, 112, i); ctx.restore()
+    pop = ease_out_back((lt - 0.1) / 0.4)
+    if pop > 0:
+        g = cairo.RadialGradient(CX, 900, 0, CX, 900, 420); c = col(e.get("color"), idx)
+        g.add_color_stop_rgba(0, *light(c, 0.3), 0.55); g.add_color_stop_rgba(1, *c, 0)
+        ctx.set_source(g); ctx.arc(CX, 900, 420, 0, 6.2832); ctx.fill()
+        ctx.save(); ctx.translate(CX, 930 + (1 - pop) * 300); ctx.scale(pop, pop)
+        dibujar_personaje(ctx, e.get("personaje", ""), 0, 0, 760, "cuerpo", fallback=e.get("arte", "estrella"), t=gt); ctx.restore()
+    if e.get("cifra"):
+        k = ease_out_back((lt - 0.45) / 0.3)
+        if k > 0:
+            ctx.save(); ctx.translate(CX, 1310); ctx.scale(k, k); glow_text(ctx, e["cifra"], 0, 0, 150, GREEN, GREEN, maxw=860); ctx.restore()
+    elif e.get("etiqueta"):
+        k = ease_out_back((lt - 0.45) / 0.3)
+        if k > 0: pill(ctx, e["etiqueta"], CX, 1310, 64 * k + 1, GOLD, fg=BLACK, maxw=760)
+
 ESCENAS = {"titulo": esc_titulo, "ficha": esc_ficha, "dos_fichas": esc_dos_fichas, "mosaico": esc_mosaico,
-           "medallones": esc_medallones, "cifra": esc_cifra, "versus": esc_versus, "lista": esc_lista}
+           "medallones": esc_medallones, "protagonista": esc_protagonista, "cifra": esc_cifra, "versus": esc_versus, "lista": esc_lista}
 
 # ---------------------------------------------------------------- subtítulos karaoke
 def trozos(texto):
