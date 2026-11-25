@@ -1,4 +1,37 @@
 {
- "actualizado": "2026-11-25T01:55+00:00",
- "videos": []
+ "actualizado": "2026-11-25T07:25+00:00",
+ "videos": [
+  {
+   "guion": "0003-gemas-del-infinito.json",
+   "titulo": "¿Dónde estaba cada Gema del Infinito? 💎 #shorts",
+   "programado": "2026-11-24T23:00-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 0,
+    "Comments": 0,
+    "Eng. Rate": 0,
+    "Video Views": 0,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 0,
+    "Avg. Watch Time (sec)": 0
+   }
+  },
+  {
+   "guion": "0002-top5-taquilla-marvel.json",
+   "titulo": "La película de Marvel que más dinero ha hecho 💰 #shorts",
+   "programado": "2026-11-24T22:00-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 0,
+    "Comments": 0,
+    "Eng. Rate": 0,
+    "Video Views": 0,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 0,
+    "Avg. Watch Time (sec)": 0
+   }
+  }
+ ]
 }
