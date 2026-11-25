@@ -6,3 +6,4 @@ Se usan en los videos y se acredita automáticamente en cada descripción ("Fond
 - Set of abstract background vertical texture shapes — https://www.vecteezy.com/vector-art/7522795 → fondo_rayos_1..3
 - Versus VS letters fight backgrounds comics art style — https://www.vecteezy.com/vector-art/16268764 → fondo_versus
 - Comic books motion speed lines — https://www.vecteezy.com/vector-art/17048706 → lineas_velocidad
+- Cartoon cinema elements, movie theater popcorn — https://www.vecteezy.com/vector-art/14719448 → cine_*

@@ -84,5 +84,8 @@ Usa SOLO nombres que existan en esa carpeta; pon siempre también un `arte` del 
 `rayo`, `escudo`, `trofeo`, `claqueta`, `portal`, `planeta`, `calavera`, `corona`, `dinero`, `fuego`, `ojo`,
 `espada`, `casco`, `estrella`, `nave`, `libro`, `interrogacion`.
 
+Elementos de cine (ideales para taquilla, estrenos, fechas y reseñas): `cine_palomitas`, `cine_lentes3d`, `cine_boleto`,
+`cine_rollo`, `cine_claqueta`, `cine_vaso`.
+
 Colores sugeridos: `#1F3B8A` azul · `#8A1F2B` rojo · `#4B1F7A` morado · `#7A5A12` dorado ·
 `#14532D` verde · `#3A3F55` gris · `#0E5E6F` turquesa · `#7A2E12` naranja.

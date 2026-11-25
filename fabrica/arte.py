@@ -548,6 +548,7 @@ ARTE = {
 }
 
 def dibujar_arte(ctx, nombre, cx, cy, s, t):
+    if isinstance(nombre, str) and nombre.startswith("cine_") and dibujar_recurso(ctx, nombre, cx, cy, s, t): return
     if nombre == "palomito":
         mascot(ctx, cx, cy + s * 0.1, s * 0.85, t); return
     f = ARTE.get(nombre) or ARTE["estrella"]
@@ -728,3 +729,23 @@ def lineas_velocidad(ctx, alpha):
     r = imagen_cairo("lineas_velocidad")
     if not r or alpha <= 0: return
     ctx.save(); ctx.set_source_surface(r[0], 0, 0); ctx.paint_with_alpha(alpha); ctx.restore()
+
+
+# ---------------- elementos de cine (Vecteezy, licencia gratuita con atribución) ----------------
+RECURSOS_ARTE = ["cine_palomitas", "cine_lentes3d", "cine_boleto", "cine_rollo", "cine_claqueta", "cine_vaso"]
+
+def dibujar_recurso(ctx, nombre, cx, cy, s, t=0):
+    """Dibuja un PNG de /recursos con contorno negro grueso (para igualar el estilo del canal)."""
+    r = imagen_cairo(nombre)
+    if not r: return False
+    img = r[0]; w, h = img.get_width(), img.get_height()
+    esc = (s * 2.1) / max(w, h)
+    bob = math.sin(t * 2.5) * s * 0.03
+    ctx.save(); ctx.translate(cx - w * esc / 2, cy - h * esc / 2 + bob); ctx.scale(esc, esc)
+    grosor = 9 / esc
+    ctx.set_source_rgb(*BLACK)
+    for k in range(12):
+        a = k * math.pi / 6
+        ctx.mask_surface(img, math.cos(a) * grosor, math.sin(a) * grosor)
+    ctx.set_source_surface(img, 0, 0); ctx.paint()
+    ctx.restore(); return True

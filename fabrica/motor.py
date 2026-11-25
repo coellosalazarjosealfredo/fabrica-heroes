@@ -116,8 +116,8 @@ def esc_medallones(ctx, e, lt, gt, dur, idx):
     lineas = e.get("lineas", [])
     for i, l in enumerate(lineas[:2]): linea_titulo(ctx, l, 330 + i * 125, 108, i)
     items = e.get("items", [])[:8]
-    n = len(items); fila1 = math.ceil(n / 2) if n > 4 else n
-    r = 122 if n > 4 else 145
+    n = len(items); fila1 = math.ceil(n / 2) if n >= 4 else n
+    r = min(145, (820 / max(1, fila1) - 24) / 2)
     y1 = 700 if lineas else 620
     for j, it in enumerate(items):
         fila = 0 if j < fila1 else 1
