@@ -315,11 +315,16 @@ def producir(g, carpeta, log=print, solo_frames=None):
             tk = 0.8 if tipo == "cifra" else 0.45
             if tk <= lt < tk + 0.35: sh = 16 * (1 - (lt - tk) / 0.35)
         ox = math.sin(gt * 90) * sh; oy = math.cos(gt * 77) * sh
-        estilo = e.get("estilo_fondo") or g.get("estilo_fondo") or "comic"
-        if estilo == "comic": background_comic(ctx, c, gt, cy=860)
+        estilo = e.get("estilo_fondo") or g.get("estilo_fondo") or "mixto"
+        if tipo == "versus" and background_imagen(ctx, "fondo_versus", lt, dur): pass
+        elif estilo == "imagen" or (estilo == "mixto" and i % 2 == 1):
+            if not background_imagen(ctx, fondo_por_color(vivo(c)), lt, dur): background_comic(ctx, c, gt, cy=860)
+        elif estilo in ("comic", "mixto"): background_comic(ctx, c, gt, cy=860)
         else: background(ctx, dark(c, 0.82), dark(c, 0.5), gt, cy=860)
         ctx.translate(CX + ox, 900 + oy); ctx.scale(z, z); ctx.translate(-CX, -900)
         ESCENAS.get(tipo, esc_titulo)(ctx, e, lt, gt, dur, i)
+        if i > 0 and lt < 0.4: lineas_velocidad(ctx, 0.55 * (1 - lt / 0.4))
+        if sh > 0: lineas_velocidad(ctx, min(0.6, sh / 16 * 0.6))
         if e.get("globo"):
             gp = ease_out_back((lt - 0.35) / 0.3)
             gy = 640 if tipo in ("titulo", "protagonista") else 520

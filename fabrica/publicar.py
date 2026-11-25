@@ -69,11 +69,13 @@ def id_canal(servicio, var):
         resumen(f"⚠️ No hay ningún canal de {servicio} conectado en Buffer: se omite esa red."); return None
     sys.exit(f"Define la variable {var}: hay {len(cs)} canales de {servicio} en Buffer (ejecuta el paso 'canales').")
 
+ATRIBUCION = "\n\n🎨 Fondos: Vecteezy.com"
+
 def crear_post(canal, texto, url_video, cuando_utc, meta):
     q = """mutation($i: CreatePostInput!) { createPost(input: $i) {
              ... on PostActionSuccess { post { id dueAt } }
              ... on MutationError { message } } }"""
-    i = {"channelId": canal, "text": texto, "schedulingType": "automatic", "mode": "customScheduled",
+    i = {"channelId": canal, "text": (texto or "") + ATRIBUCION, "schedulingType": "automatic", "mode": "customScheduled",
          "dueAt": cuando_utc.strftime("%Y-%m-%dT%H:%M:%S.000Z"), "aiAssisted": True,
          "assets": [{"video": {"url": url_video, "metadata": {"thumbnailOffset": 1200}}}], "metadata": meta}
     r = gql(q, {"i": i})["createPost"]
@@ -94,10 +96,10 @@ def zernio_post_youtube(cuenta, url_video, cuando, zona, pub):
     urllib.request.urlretrieve(url_video, tmp)
     url_z = zernio.subir(tmp, "video/mp4", clave)
     titulo = (pub.get("titulo_youtube") or pub.get("titulo") or "")[:100]
-    cuerpo = {"content": pub.get("descripcion", ""), "title": titulo, "tags": pub.get("tags", []),
+    cuerpo = {"content": pub.get("descripcion", "") + ATRIBUCION, "title": titulo, "tags": pub.get("tags", []),
               "scheduledFor": cuando.strftime("%Y-%m-%dT%H:%M:%S"), "timezone": zona, "publishNow": False,
               "mediaItems": [{"type": "video", "url": url_z}],
-              "platforms": [{"platform": "youtube", "accountId": cuenta, "customContent": pub.get("descripcion", ""),
+              "platforms": [{"platform": "youtube", "accountId": cuenta, "customContent": pub.get("descripcion", "") + ATRIBUCION,
                              "platformSpecificData": {"title": titulo, "visibility": env("VISIBILIDAD", "public"), "madeForKids": False}}]}
     r = zernio.crear_post(cuerpo, clave)
     post = r.get("post", r) if isinstance(r, dict) else {}

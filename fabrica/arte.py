@@ -687,3 +687,44 @@ def globo(ctx, texto, cx, cy, w, h, cola=(-1, 1), tipo="ovalo", sombra=hexc("#3F
         y = cy + (i - (len(lineas) - 1) / 2) * size * 1.05
         text(ctx, l, cx, y, size, BLACK, stroke=0, maxw=w * 0.78)
     ctx.restore()
+
+
+# ---------------- fondos e insertos de Vecteezy (licencia gratuita con atribución) ----------------
+_RAIZ_REC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "recursos")
+_CACHE_IMG = {}
+FONDOS_IMG = {"fondo_comic_1": 0.08, "fondo_comic_2": 0.0, "fondo_comic_3": 0.45, "fondo_comic_4": 0.68,
+              "fondo_rayos_1": 0.6, "fondo_rayos_2": 0.14, "fondo_rayos_3": 0.94}
+
+def imagen_cairo(nombre):
+    if nombre in _CACHE_IMG: return _CACHE_IMG[nombre]
+    from PIL import Image
+    ruta = next((os.path.join(_RAIZ_REC, nombre + ext) for ext in (".png", ".jpg") if os.path.exists(os.path.join(_RAIZ_REC, nombre + ext))), None)
+    if not ruta: _CACHE_IMG[nombre] = None; return None
+    im = Image.open(ruta).convert("RGBA")
+    import numpy as np
+    a = np.asarray(im).copy(); a = a[..., [2, 1, 0, 3]]
+    al = a[..., 3:4].astype(np.float32) / 255.0; a[..., :3] = (a[..., :3] * al).astype(np.uint8)   # premultiplicado
+    buf = bytearray(np.ascontiguousarray(a).tobytes())
+    surf = cairo.ImageSurface.create_for_data(buf, cairo.FORMAT_ARGB32, im.width, im.height, im.width * 4)
+    _CACHE_IMG[nombre] = (surf, buf); return _CACHE_IMG[nombre]
+
+def fondo_por_color(col):
+    h, sat, v = colorsys.rgb_to_hsv(*col)
+    if sat < 0.15: return "fondo_comic_4"
+    return min(FONDOS_IMG, key=lambda k: min(abs(FONDOS_IMG[k] - h), 1 - abs(FONDOS_IMG[k] - h)))
+
+def background_imagen(ctx, nombre, lt, dur):
+    r = imagen_cairo(nombre)
+    if not r: return False
+    surf = r[0]; z = 1.02 + 0.06 * min(1, lt / max(dur, 0.1))
+    ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(z, z); ctx.rotate(0.01 * math.sin(lt * 0.7)); ctx.translate(-W / 2, -H / 2)
+    ctx.set_source_surface(surf, 0, 0); ctx.paint(); ctx.restore()
+    v = cairo.RadialGradient(CX, 860, 650, CX, 860, 1500)
+    v.add_color_stop_rgba(0, 0, 0, 0, 0); v.add_color_stop_rgba(1, 0, 0, 0, 0.5)
+    ctx.set_source(v); ctx.paint()
+    return True
+
+def lineas_velocidad(ctx, alpha):
+    r = imagen_cairo("lineas_velocidad")
+    if not r or alpha <= 0: return
+    ctx.save(); ctx.set_source_surface(r[0], 0, 0); ctx.paint_with_alpha(alpha); ctx.restore()
