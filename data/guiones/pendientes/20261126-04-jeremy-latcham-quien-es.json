@@ -1,0 +1,134 @@
+{
+  "id": "H-20261126-04",
+  "publicacion": {
+    "titulo_youtube": "El nuevo jefe de DC produjo Iron Man y Avengers 🤯 #shorts",
+    "descripcion": "Jeremy Latcham, el nuevo jefe creativo de DC Studios, trabajó años en Marvel Studios. Estas son sus películas 🎬\n\n¿Cuál es tu favorita de su lista? 👇\n\n#dc #marvel #dcstudios #ironman #avengers #superheroes #shorts",
+    "texto_tiktok": "El nuevo jefe creativo de DC viene de Marvel 🤯 y produjo Iron Man y Avengers. ¿Cuál es tu favorita? 👇 #dc #marvel #dcstudios #ironman #avengers #superheroes",
+    "tags": [
+      "dc",
+      "marvel",
+      "jeremy latcham",
+      "dc studios",
+      "iron man"
+    ]
+  },
+  "serie": {
+    "texto": "EL NUEVO JEFE DE DC",
+    "total": 5
+  },
+  "fuentes": [
+    "https://screenrant.com/dc-studios-james-gunn-peter-safran-exit-replaced-explained/",
+    "https://screenrant.com/dc-studios-james-gunn-peter-safran-ceo-exit/"
+  ],
+  "bloques": [
+    {
+      "texto": "El nuevo jefe de DC ayudó a crear Iron Man... y los Avengers.",
+      "decir": "El nuevo jefe de Di Si ayudó a crear Áiron Man... y los Avéngers.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "DE MARVEL",
+          {
+            "t": "A DC",
+            "c": "amarillo"
+          }
+        ],
+        "arte": "portal",
+        "fondo": "#4B1F7A",
+        "globo": "¡NO LO SABÍAS!"
+      }
+    },
+    {
+      "texto": "Se llama Jeremy Latcham y desde el 1 de diciembre será su jefe creativo.",
+      "decir": "Se llama Yéremi Látcham y desde el primero de diciembre será su jefe creativo.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Jeremy Latcham",
+        "anio": "DESDE EL 1 DIC",
+        "arte": "corona",
+        "color": "#1F3B8A",
+        "fondo": "#1F3B8A"
+      }
+    },
+    {
+      "texto": "En Marvel produjo Iron Man y The Avengers.",
+      "decir": "En Márvel produjo Áiron Man y De Avéngers.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "SUS INICIOS",
+        "fondo": "#8A1F2B",
+        "fichas": [
+          {
+            "titulo": "Iron Man",
+            "anio": "2008",
+            "arte": "robot",
+            "color": "#8A1F2B",
+            "check": true
+          },
+          {
+            "titulo": "The Avengers",
+            "anio": "2012",
+            "arte": "escudo",
+            "color": "#1F3B8A",
+            "check": true
+          }
+        ]
+      },
+      "paso": 2
+    },
+    {
+      "texto": "También Guardianes, Era de Ultrón y Spider-Man: Homecoming.",
+      "decir": "También Guardianes, Era de Ultrón y Spáider Man: Jóumcamin.",
+      "escena": {
+        "tipo": "lista",
+        "titulo": "MÁS PRODUCCIONES",
+        "items": [
+          "Guardianes de la Galaxia",
+          "Era de Ultrón",
+          "Spider-Man: Homecoming"
+        ],
+        "fondo": "#14532D"
+      },
+      "paso": 5
+    },
+    {
+      "texto": "Y ahí conoció a James Gunn.",
+      "decir": "Y ahí conoció a Yéims Gan.",
+      "escena": {
+        "tipo": "medallones",
+        "lineas": [
+          "VIEJOS CONOCIDOS"
+        ],
+        "fondo": "#0E5E6F",
+        "items": [
+          {
+            "arte": "nave",
+            "texto": "GUARDIANES",
+            "color": "#0E5E6F"
+          },
+          {
+            "arte": "claqueta",
+            "texto": "GUNN",
+            "color": "#7A5A12"
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Dejó Marvel en 2017... y ahora el que manda en DC ayudó a crear Iron Man.",
+      "decir": "Dejó Márvel en dos mil diecisiete... y ahora el que manda en Di Si ayudó a crear Áiron Man.",
+      "escenas": [
+        {
+          "tipo": "cifra",
+          "valor": 2017,
+          "texto": "SALIÓ DE MARVEL",
+          "arte": "reloj_arena",
+          "fondo": "#7A2E12"
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

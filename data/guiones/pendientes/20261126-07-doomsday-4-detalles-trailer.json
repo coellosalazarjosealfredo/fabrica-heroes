@@ -1,0 +1,128 @@
+{
+  "id": "H-20261126-07",
+  "publicacion": {
+    "titulo_youtube": "4 detalles del tráiler de Doomsday que quizá no viste 👀 #shorts",
+    "descripcion": "Doom frena a Stormbreaker, Loki en un trono y dos planetas sobre la Tierra: detalles clave de los tráilers de Avengers: Doomsday 👀\n\n¿Cuál te sorprendió más? 👇\n\n#marvel #avengersdoomsday #doctordoom #loki #ucm #doomsday #shorts",
+    "texto_tiktok": "4 detalles de los tráilers de Doomsday que quizá no viste 👀 ¿Cuál te sorprendió más? 👇 #marvel #avengersdoomsday #doctordoom #loki #ucm #doomsday",
+    "tags": [
+      "marvel",
+      "avengers doomsday",
+      "trailer",
+      "doctor doom",
+      "loki"
+    ]
+  },
+  "serie": {
+    "texto": "4 DETALLES DE DOOMSDAY",
+    "total": 4
+  },
+  "fuentes": [
+    "https://www.thenationalnews.com/arts-culture/film-tv/2026/11/24/avengers-doomsday-trailer-takeaways-avengers-x-men-fantastic-four/"
+  ],
+  "bloques": [
+    {
+      "texto": "Cuatro detalles de Doomsday que quizá se te pasaron.",
+      "decir": "Cuatro detalles de Dúmsdei que quizá se te pasaron.",
+      "escena": {
+        "tipo": "titulo",
+        "numero": 4,
+        "lineas": [
+          "DETALLES",
+          {
+            "t": "OCULTOS",
+            "c": "verde"
+          }
+        ],
+        "arte": "ojo",
+        "fondo": "#0E5E6F",
+        "globo": "¿LOS VISTE?"
+      }
+    },
+    {
+      "texto": "Uno: Doctor Doom detiene el hacha de Thor con una sola mano.",
+      "decir": "Uno: Dóctor Dum detiene el hacha de Zor con una sola mano.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Doom vs Stormbreaker",
+        "anio": "UNA MANO",
+        "arte": "martillo",
+        "color": "#14532D",
+        "rango": "#1",
+        "fondo": "#14532D",
+        "impacto": true
+      },
+      "paso": 1
+    },
+    {
+      "texto": "Dos: Loki aparece en un trono, en el centro del multiverso.",
+      "decir": "Dos: Lóki aparece en un trono, en el centro del multiverso.",
+      "escena": {
+        "tipo": "protagonista",
+        "personaje": "palomito",
+        "lineas": [
+          "LOKI"
+        ],
+        "etiqueta": "EN SU TRONO",
+        "arte": "corona",
+        "fondo": "#7A5A12"
+      }
+    },
+    {
+      "texto": "Tres: los X-Men enfrentan a los Centinelas.",
+      "decir": "Tres: los Équis Men enfrentan a los Centinelas.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 3,
+        "prefijo": "#",
+        "texto": "X-MEN VS CENTINELAS",
+        "arte": "robot",
+        "fondo": "#3A3F55"
+      },
+      "paso": 3
+    },
+    {
+      "texto": "Cuatro: dos planetas se acercan a la Tierra.",
+      "decir": "Cuatro: dos planetas se acercan a la Tierra.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "¿CUÁL SOBREVIVE?",
+        "fondo": "#4B1F7A",
+        "fichas": [
+          {
+            "titulo": "Tierra 1",
+            "anio": "¿?",
+            "arte": "planeta",
+            "color": "#1F3B8A"
+          },
+          {
+            "titulo": "Tierra 2",
+            "anio": "¿?",
+            "arte": "planeta",
+            "color": "#8A1F2B"
+          }
+        ]
+      },
+      "paso": 4
+    },
+    {
+      "texto": "Y quizá haya que elegir cuál sobrevive. Repásalos: son cuatro detalles.",
+      "decir": "Y quizá haya que elegir cuál sobrevive. Repásalos: son cuatro detalles.",
+      "escenas": [
+        {
+          "tipo": "lista",
+          "titulo": "LOS 4 DETALLES",
+          "items": [
+            "Doom frena a Stormbreaker",
+            "Loki en su trono",
+            "Centinelas",
+            "Dos planetas"
+          ],
+          "fondo": "#0E5E6F"
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

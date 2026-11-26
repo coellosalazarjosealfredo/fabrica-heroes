@@ -1,0 +1,118 @@
+{
+  "id": "H-20261126-10",
+  "publicacion": {
+    "titulo_youtube": "¿Sabías que Doomsday se filmó en Bahréin? 🌍 #shorts",
+    "descripcion": "Curiosidades del rodaje de Avengers: Doomsday: dónde se filmó, cuánto duró y cuántas veces cambió de fecha 🎬\n\n¿Cuál de estos datos no sabías? 👇\n\n#marvel #avengersdoomsday #curiosidades #ucm #avengers #doomsday #shorts",
+    "texto_tiktok": "¿Sabías que Avengers: Doomsday se filmó en Bahréin? 🌍 ¿Cuál de estos datos no sabías? 👇 #marvel #avengersdoomsday #curiosidades #ucm #avengers #doomsday",
+    "tags": [
+      "marvel",
+      "avengers doomsday",
+      "curiosidades",
+      "rodaje",
+      "ucm"
+    ]
+  },
+  "fuentes": [
+    "https://en.wikipedia.org/wiki/Avengers:_Doomsday",
+    "https://en.wikipedia.org/wiki/Production_of_Avengers:_Doomsday_and_Avengers:_Secret_Wars"
+  ],
+  "bloques": [
+    {
+      "texto": "¿Sabías que Avengers: Doomsday también se filmó en Bahréin?",
+      "decir": "¿Sabías que Avéngers: Dúmsdei también se filmó en Baréin?",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "¿SABÍAS",
+          {
+            "t": "QUE…?",
+            "c": "amarillo"
+          }
+        ],
+        "arte": "palomito",
+        "fondo": "#7A2E12",
+        "globo": "¿EN SERIO?"
+      }
+    },
+    {
+      "texto": "La base del rodaje fue Pinewood Studios, en Inglaterra.",
+      "decir": "La base del rodaje fue Páinwud Estudios, en Inglaterra.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Pinewood Studios",
+        "anio": "INGLATERRA",
+        "arte": "cine_claqueta",
+        "color": "#1F3B8A",
+        "fondo": "#1F3B8A"
+      }
+    },
+    {
+      "texto": "Se rodó de abril a septiembre de 2025... unos cinco meses.",
+      "decir": "Se rodó de abril a septiembre de dos mil veinticinco... unos cinco meses.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 5,
+        "sufijo": " MESES",
+        "texto": "DE RODAJE",
+        "arte": "reloj_arena",
+        "fondo": "#14532D"
+      }
+    },
+    {
+      "texto": "La historia ocurre catorce meses después de Thunderbolts.",
+      "decir": "La historia ocurre catorce meses después de Zándervolts.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "LÍNEA DE TIEMPO",
+        "fondo": "#4B1F7A",
+        "fichas": [
+          {
+            "titulo": "Thunderbolts*",
+            "anio": "2025",
+            "arte": "rayo",
+            "color": "#3A3F55"
+          },
+          {
+            "titulo": "Doomsday",
+            "anio": "+14 MESES",
+            "arte": "casco",
+            "color": "#14532D"
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Y es la última película de Patrick Stewart como el Profesor X.",
+      "decir": "Y es la última película de Pátrik Stíuart como el Profesor Équis.",
+      "escena": {
+        "tipo": "protagonista",
+        "personaje": "palomito",
+        "lineas": [
+          "PROFESOR X"
+        ],
+        "etiqueta": "PATRICK STEWART",
+        "arte": "estrella",
+        "fondo": "#7A5A12"
+      }
+    },
+    {
+      "texto": "Inglaterra, cinco meses de rodaje... y una parte en Bahréin.",
+      "decir": "Inglaterra, cinco meses de rodaje... y una parte en Baréin.",
+      "escenas": [
+        {
+          "tipo": "lista",
+          "titulo": "DOOMSDAY",
+          "items": [
+            "Pinewood, Inglaterra",
+            "Abril–septiembre 2025",
+            "Bahréin"
+          ],
+          "fondo": "#3A3F55"
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "H-20261126-05",
+  "publicacion": {
+    "titulo_youtube": "The Batman Part II ya cambió de fecha DOS veces 🦇 #shorts",
+    "descripcion": "The Batman Part II de Matt Reeves ha tenido tres fechas de estreno. Esta es la actual 🦇📅\n\n¿Vale la pena esperar hasta 2028? 👇\n\n#batman #thebatman #robertpattinson #dc #mattreeves #superheroes #shorts",
+    "texto_tiktok": "The Batman Part II ya va por su tercera fecha de estreno 🦇 ¿Vale la pena esperar hasta 2028? 👇 #batman #thebatman #robertpattinson #dc #mattreeves #superheroes",
+    "tags": [
+      "batman",
+      "the batman part ii",
+      "robert pattinson",
+      "dc",
+      "matt reeves"
+    ]
+  },
+  "fuentes": [
+    "https://gulfnews.com/entertainment/the-batman-part-ii-delayed-again-why-robert-pattinsons-batman-wont-answer-the-bat-signal-until-2028-1.500609559",
+    "https://screenrant.com/dc-studios-james-gunn-peter-safran-exit-replaced-explained/"
+  ],
+  "bloques": [
+    {
+      "texto": "The Batman Part II debía estrenarse este año... y ahora llega en 2028.",
+      "decir": "De Bátman Part Tu debía estrenarse este año... y ahora llega en dos mil veintiocho.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "THE BATMAN",
+          {
+            "t": "PART II",
+            "c": "amarillo"
+          }
+        ],
+        "arte": "mascara",
+        "fondo": "#3A3F55",
+        "globo": "¿OTRA VEZ?"
+      }
+    },
+    {
+      "texto": "Primero: 2 de octubre de 2026.",
+      "decir": "Primero: dos de octubre de dos mil veintiséis.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Fecha 1",
+        "anio": "2 OCT 2026",
+        "arte": "cine_boleto",
+        "color": "#8A1F2B",
+        "check": false,
+        "fondo": "#8A1F2B"
+      }
+    },
+    {
+      "texto": "Luego se movió al 1 de octubre de 2027.",
+      "decir": "Luego se movió al primero de octubre de dos mil veintisiete.",
+      "escena": {
+        "tipo": "versus",
+        "titulo": "SE MUEVE",
+        "a": {
+          "titulo": "2026",
+          "anio": "2 OCT",
+          "arte": "cine_boleto",
+          "color": "#3A3F55"
+        },
+        "b": {
+          "titulo": "2027",
+          "anio": "1 OCT",
+          "arte": "reloj_arena",
+          "color": "#7A2E12"
+        }
+      }
+    },
+    {
+      "texto": "Y ahora: 18 de febrero de 2028.",
+      "decir": "Y ahora: dieciocho de febrero de dos mil veintiocho.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 2028,
+        "texto": "18 DE FEBRERO",
+        "arte": "cine_rollo",
+        "fondo": "#1F3B8A"
+      }
+    },
+    {
+      "texto": "Vuelve Robert Pattinson como Batman y Matt Reeves la coescribe.",
+      "decir": "Vuelve Róbert Pátinson como Bátman y Mat Rívs la coescribe.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "LO SEGURO",
+        "fondo": "#14532D",
+        "fichas": [
+          {
+            "titulo": "Robert Pattinson",
+            "anio": "BATMAN",
+            "arte": "mascara",
+            "color": "#3A3F55",
+            "check": true
+          },
+          {
+            "titulo": "Matt Reeves",
+            "anio": "DIRECTOR",
+            "arte": "claqueta",
+            "color": "#0E5E6F",
+            "check": true
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Y no es parte del DCU... por eso debía estrenarse este año.",
+      "decir": "Y no es parte del Di Si Iu... por eso debía estrenarse este año.",
+      "escenas": [
+        {
+          "tipo": "lista",
+          "titulo": "TRES FECHAS",
+          "items": [
+            "Oct 2026",
+            "Oct 2027",
+            "Feb 2028"
+          ],
+          "fondo": "#4B1F7A"
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

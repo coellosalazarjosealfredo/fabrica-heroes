@@ -1,0 +1,144 @@
+{
+  "id": "H-20261126-02",
+  "publicacion": {
+    "titulo_youtube": "James Gunn deja de dirigir DC Studios 😱 Parte 1 #shorts",
+    "descripcion": "James Gunn y Peter Safran dejan la dirección de DC Studios y llega un exejecutivo de Marvel 🦇⚡\n\n¿Crees que fue buena idea? 👇\n\n#dc #dcu #jamesgunn #dcstudios #superman #superheroes #shorts",
+    "texto_tiktok": "James Gunn y Peter Safran ya no dirigen DC Studios 😱 y su reemplazo viene de Marvel. ¿Buena idea? 👇 #dc #dcu #jamesgunn #dcstudios #superman #superheroes",
+    "tags": [
+      "dc",
+      "james gunn",
+      "dc studios",
+      "dcu",
+      "peter safran"
+    ]
+  },
+  "serie": {
+    "texto": "TERREMOTO EN DC",
+    "total": 2
+  },
+  "fuentes": [
+    "https://screenrant.com/dc-studios-james-gunn-peter-safran-exit-replaced-explained/",
+    "https://screenrant.com/dc-studios-james-gunn-peter-safran-ceo-exit/",
+    "https://deadline.com/2026/11/dc-studios-james-gunn-peter-safran-leaving-1237217374/"
+  ],
+  "bloques": [
+    {
+      "texto": "James Gunn ya no dirige DC Studios... y su reemplazo viene de Marvel.",
+      "decir": "Yéims Gan ya no dirige Di Si Estudios... y su reemplazo viene de Márvel.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "GUNN Y SAFRAN",
+          {
+            "t": "FUERA DE DC",
+            "c": "rojo"
+          }
+        ],
+        "arte": "palomito",
+        "fondo": "#8A1F2B",
+        "globo": "¿QUÉ PASÓ?",
+        "impacto": true
+      },
+      "paso": 1
+    },
+    {
+      "texto": "Él y Peter Safran dejan la dirección del estudio.",
+      "decir": "Él y Píter Sáfran dejan la dirección del estudio.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "DEJAN EL MANDO",
+        "fondo": "#3A3F55",
+        "fichas": [
+          {
+            "titulo": "James Gunn",
+            "anio": "CO-CEO",
+            "arte": "claqueta",
+            "color": "#1F3B8A",
+            "check": false
+          },
+          {
+            "titulo": "Peter Safran",
+            "anio": "CO-CEO",
+            "arte": "dinero",
+            "color": "#7A5A12",
+            "check": false
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Se anunció el 9 de noviembre, en la llamada de resultados de Skydance.",
+      "decir": "Se anunció el nueve de noviembre, en la llamada de resultados de Scáidans.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Anuncio oficial",
+        "anio": "9 NOV 2026",
+        "arte": "libro",
+        "color": "#0E5E6F",
+        "fondo": "#0E5E6F"
+      }
+    },
+    {
+      "texto": "El nuevo jefe creativo es Jeremy Latcham, ex de Marvel.",
+      "decir": "El nuevo jefe creativo es Yéremi Látcham, ex de Márvel.",
+      "escena": {
+        "tipo": "protagonista",
+        "personaje": "palomito",
+        "lineas": [
+          "NUEVO JEFE",
+          "JEREMY LATCHAM"
+        ],
+        "etiqueta": "EX MARVEL",
+        "arte": "corona",
+        "fondo": "#4B1F7A"
+      }
+    },
+    {
+      "texto": "Y empieza el 1 de diciembre.",
+      "decir": "Y empieza el primero de diciembre.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 1,
+        "texto": "DE DICIEMBRE",
+        "arte": "reloj_arena",
+        "fondo": "#14532D"
+      }
+    },
+    {
+      "texto": "En la parte 2: qué pasa con Superman... ahora que Gunn ya no dirige DC.",
+      "decir": "En la parte dos: qué pasa con Súperman... ahora que Gan ya no dirige Di Si.",
+      "escenas": [
+        {
+          "tipo": "medallones",
+          "lineas": [
+            {
+              "t": "PARTE 2",
+              "c": "dorado"
+            }
+          ],
+          "fondo": "#1F3B8A",
+          "items": [
+            {
+              "arte": "estrella",
+              "texto": "SUPERMAN",
+              "color": "#1F3B8A"
+            },
+            {
+              "arte": "interrogacion",
+              "texto": "DCU",
+              "color": "#8A1F2B"
+            },
+            {
+              "arte": "claqueta",
+              "texto": "GUNN",
+              "color": "#7A5A12"
+            }
+          ]
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

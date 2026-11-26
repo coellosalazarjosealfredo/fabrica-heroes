@@ -1,0 +1,160 @@
+{
+  "id": "H-20261126-09",
+  "publicacion": {
+    "titulo_youtube": "Solo 3 películas superan 2.500 millones 💰 y una es de Spider-Man #shorts",
+    "descripcion": "Solo tres películas en la historia superan los 2.500 millones de dólares en taquilla mundial 💰🕷️\n\n¿Doomsday será la cuarta? 👇\n\n#marvel #spiderman #taquilla #endgame #avatar #ucm #shorts",
+    "texto_tiktok": "Solo 3 películas han superado 2.500 millones en taquilla 💰 ¿Doomsday será la cuarta? 👇 #marvel #spiderman #taquilla #endgame #avatar #ucm",
+    "tags": [
+      "marvel",
+      "spider-man",
+      "taquilla",
+      "endgame",
+      "avatar"
+    ]
+  },
+  "serie": {
+    "texto": "CLUB DE LOS 2.500 MILLONES",
+    "total": 3
+  },
+  "fuentes": [
+    "https://comicbookmovie.com/spider_man/spider_man-brand-new-day/spider-man-brand-new-day-breaks-one-final-box-office-record-ahead-of-digital-release-a230251",
+    "https://www.boxofficemojo.com/chart/ww_top_lifetime_gross/"
+  ],
+  "bloques": [
+    {
+      "texto": "Solo tres películas en la historia pasan los 2.500 millones.",
+      "decir": "Solo tres películas en la historia pasan los dos mil quinientos millones.",
+      "escena": {
+        "tipo": "titulo",
+        "numero": 3,
+        "lineas": [
+          "PELÍCULAS",
+          {
+            "t": "+2.500 M",
+            "c": "dorado"
+          }
+        ],
+        "arte": "dinero",
+        "fondo": "#7A5A12",
+        "globo": "¡SOLO TRES!"
+      }
+    },
+    {
+      "texto": "Número uno: Avengers Endgame, con 2.925 millones.",
+      "decir": "Número uno: Avéngers Éndgueim, con dos mil novecientos veinticinco millones.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Avengers: Endgame",
+        "anio": "2019",
+        "rango": "#1",
+        "cifra": "US$ 2.925 M",
+        "arte": "trofeo",
+        "color": "#4B1F7A",
+        "fondo": "#4B1F7A"
+      },
+      "paso": 1
+    },
+    {
+      "texto": "Avatar, a solo un millón de distancia.",
+      "decir": "Ávatar, a solo un millón de distancia.",
+      "escena": {
+        "tipo": "versus",
+        "titulo": "POR UN MILLÓN",
+        "a": {
+          "titulo": "Endgame",
+          "anio": "2.925 M",
+          "arte": "corona",
+          "color": "#4B1F7A"
+        },
+        "b": {
+          "titulo": "Avatar",
+          "anio": "2.924 M",
+          "arte": "planeta",
+          "color": "#0E5E6F"
+        }
+      },
+      "paso": 2
+    },
+    {
+      "texto": "Y la tercera, desde octubre: Spider-Man: Brand New Day.",
+      "decir": "Y la tercera, desde octubre: Spáider Man: Brand Niú Déi.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 2520,
+        "prefijo": "US$ ",
+        "sufijo": " M",
+        "texto": "SPIDER-MAN: BND",
+        "arte": "telarana",
+        "fondo": "#8A1F2B"
+      },
+      "paso": 3
+    },
+    {
+      "texto": "Y el 15 de diciembre llega a casa en 4K y Blu-ray.",
+      "decir": "Y el quince de diciembre llega a casa en cuatro ka y Blu rei.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "EN CASA",
+        "fondo": "#1F3B8A",
+        "fichas": [
+          {
+            "titulo": "Digital",
+            "anio": "6 OCT",
+            "arte": "cine_rollo",
+            "color": "#3A3F55",
+            "check": true
+          },
+          {
+            "titulo": "4K y Blu-ray",
+            "anio": "15 DIC",
+            "arte": "cine_lentes3d",
+            "color": "#7A2E12"
+          }
+        ]
+      }
+    },
+    {
+      "texto": "¿Doomsday será la cuarta? Por ahora, solo tres películas pasan los 2.500 millones.",
+      "decir": "¿Dúmsdei será la cuarta? Por ahora, solo tres películas pasan los dos mil quinientos millones.",
+      "escenas": [
+        {
+          "tipo": "mosaico",
+          "lineas": [
+            "EL CLUB"
+          ],
+          "fondo": "#3A3F55",
+          "destacar": 3,
+          "fichas": [
+            {
+              "titulo": "Endgame",
+              "anio": "#1",
+              "arte": "trofeo",
+              "color": "#4B1F7A"
+            },
+            {
+              "titulo": "Avatar",
+              "anio": "#2",
+              "arte": "planeta",
+              "color": "#0E5E6F"
+            },
+            {
+              "titulo": "Spider-Man: BND",
+              "anio": "#3",
+              "arte": "telarana",
+              "color": "#8A1F2B"
+            },
+            {
+              "titulo": "Doomsday",
+              "anio": "¿#4?",
+              "arte": "interrogacion",
+              "color": "#14532D"
+            }
+          ]
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

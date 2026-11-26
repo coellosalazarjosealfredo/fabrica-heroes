@@ -1,0 +1,155 @@
+{
+  "id": "H-20261126-06",
+  "publicacion": {
+    "titulo_youtube": "Avengers vs X-Men: los 3 duelos del tráiler de Doomsday ⚔️ #shorts",
+    "descripcion": "Los tráilers de Avengers: Doomsday muestran a Vengadores y X-Men peleando entre sí. Estos son los duelos ⚔️\n\n¿Quién gana cada pelea? 👇\n\n#marvel #avengersdoomsday #xmen #avengers #ucm #doomsday #shorts",
+    "texto_tiktok": "Avengers vs X-Men en Doomsday ⚔️ estos son los 3 duelos que ya vimos. ¿Quién gana cada uno? 👇 #marvel #avengersdoomsday #xmen #avengers #ucm #doomsday",
+    "tags": [
+      "marvel",
+      "avengers doomsday",
+      "x-men",
+      "trailer",
+      "ucm"
+    ]
+  },
+  "serie": {
+    "texto": "AVENGERS VS X-MEN",
+    "total": 3
+  },
+  "fuentes": [
+    "https://www.thenationalnews.com/arts-culture/film-tv/2026/11/24/avengers-doomsday-trailer-takeaways-avengers-x-men-fantastic-four/",
+    "https://en.wikipedia.org/wiki/Avengers:_Doomsday"
+  ],
+  "bloques": [
+    {
+      "texto": "En Doomsday, los Avengers pelean contra los X-Men.",
+      "decir": "En Dúmsdei, los Avéngers pelean contra los Équis Men.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "AVENGERS",
+          {
+            "t": "VS",
+            "c": "rojo"
+          },
+          "X-MEN"
+        ],
+        "arte": "espada",
+        "fondo": "#8A1F2B",
+        "impacto": true
+      }
+    },
+    {
+      "texto": "Duelo uno: Shang-Chi, de Simu Liu, contra el Gambit de Channing Tatum.",
+      "decir": "Duelo uno: Shang Chi, de Símu Liú, contra el Gámbit de Chánin Tátum.",
+      "escena": {
+        "tipo": "versus",
+        "titulo": "DUELO 1",
+        "a": {
+          "titulo": "Shang-Chi",
+          "anio": "SIMU LIU",
+          "arte": "fuego",
+          "color": "#8A1F2B"
+        },
+        "b": {
+          "titulo": "Gambit",
+          "anio": "CHANNING TATUM",
+          "arte": "estrella",
+          "color": "#4B1F7A"
+        }
+      },
+      "paso": 1
+    },
+    {
+      "texto": "Duelo dos: Yelena, de Florence Pugh, contra Mystique.",
+      "decir": "Duelo dos: Yelena, de Flórens Piú, contra Místic.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "DUELO 2",
+        "fondo": "#3A3F55",
+        "fichas": [
+          {
+            "titulo": "Yelena",
+            "anio": "FLORENCE PUGH",
+            "arte": "rayo",
+            "color": "#3A3F55"
+          },
+          {
+            "titulo": "Mystique",
+            "anio": "REBECCA ROMIJN",
+            "arte": "mascara",
+            "color": "#1F3B8A"
+          }
+        ],
+        "pie": "VS",
+        "pie_color": "rojo"
+      },
+      "paso": 2
+    },
+    {
+      "texto": "Duelo tres: el Capitán América de Sam Wilson contra Cíclope.",
+      "decir": "Duelo tres: el Capitán América de Sam Uílson contra Cíclope.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Sam Wilson vs Cíclope",
+        "anio": "TRÁILER FINAL",
+        "arte": "escudo",
+        "color": "#1F3B8A",
+        "rango": "#3",
+        "fondo": "#1F3B8A"
+      },
+      "paso": 3
+    },
+    {
+      "texto": "Y Cíclope grita: a mí, mis X-Men.",
+      "decir": "Y Cíclope grita: a mí, mis Équis Men.",
+      "escena": {
+        "tipo": "protagonista",
+        "personaje": "palomito",
+        "lineas": [
+          "\"A MÍ,",
+          "MIS X-MEN\""
+        ],
+        "etiqueta": "CÍCLOPE",
+        "arte": "ojo",
+        "fondo": "#7A5A12"
+      }
+    },
+    {
+      "texto": "El 18 de diciembre por fin veremos a los Avengers pelear contra los X-Men.",
+      "decir": "El dieciocho de diciembre por fin veremos a los Avéngers pelear contra los Équis Men.",
+      "escenas": [
+        {
+          "tipo": "medallones",
+          "lineas": [
+            {
+              "t": "18 DIC",
+              "c": "dorado"
+            }
+          ],
+          "fondo": "#4B1F7A",
+          "items": [
+            {
+              "arte": "fuego",
+              "texto": "SHANG-CHI",
+              "color": "#8A1F2B"
+            },
+            {
+              "arte": "rayo",
+              "texto": "YELENA",
+              "color": "#3A3F55"
+            },
+            {
+              "arte": "escudo",
+              "texto": "SAM",
+              "color": "#1F3B8A"
+            }
+          ]
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

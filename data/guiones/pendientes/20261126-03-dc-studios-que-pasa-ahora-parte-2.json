@@ -1,0 +1,133 @@
+{
+  "id": "H-20261126-03",
+  "publicacion": {
+    "titulo_youtube": "¿Qué pasa con Superman sin Gunn al mando? 🤔 Parte 2 #shorts",
+    "descripcion": "Gunn y Safran ya no dirigen DC Studios, pero Man of Tomorrow sigue en pie. Esto es lo que se sabe del futuro del DCU 🦸\n\n¿Qué proyecto de DC esperas más? 👇\n\n#dc #dcu #manoftomorrow #superman #jamesgunn #superheroes #shorts",
+    "texto_tiktok": "Sin Gunn al mando, ¿qué pasa con Man of Tomorrow y el DCU? 🤔 ¿Qué proyecto de DC esperas más? 👇 #dc #dcu #manoftomorrow #superman #jamesgunn #superheroes",
+    "tags": [
+      "dc",
+      "man of tomorrow",
+      "james gunn",
+      "dcu",
+      "superman"
+    ]
+  },
+  "serie": {
+    "texto": "TERREMOTO EN DC",
+    "total": 2
+  },
+  "fuentes": [
+    "https://screenrant.com/dc-studios-james-gunn-peter-safran-ceo-exit/",
+    "https://screenrant.com/dc-studios-james-gunn-peter-safran-exit-replaced-explained/",
+    "https://en.wikipedia.org/wiki/Man_of_Tomorrow_(film)"
+  ],
+  "bloques": [
+    {
+      "texto": "Gunn ya no manda en DC... pero Superman no se va a ningún lado.",
+      "decir": "Gan ya no manda en Di Si... pero Súperman no se va a ningún lado.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "¿Y AHORA",
+          {
+            "t": "QUÉ PASA?",
+            "c": "amarillo"
+          }
+        ],
+        "arte": "estrella",
+        "fondo": "#1F3B8A"
+      },
+      "paso": 2
+    },
+    {
+      "texto": "Man of Tomorrow sigue en pie: llega el 9 de julio de 2027.",
+      "decir": "Man of Tumórrou sigue en pie: llega el nueve de julio de dos mil veintisiete.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Man of Tomorrow",
+        "anio": "9 JUL 2027",
+        "arte": "cine_claqueta",
+        "color": "#8A1F2B",
+        "check": true,
+        "fondo": "#8A1F2B"
+      }
+    },
+    {
+      "texto": "Gunn y Safran seguirán produciéndola hasta el final.",
+      "decir": "Gan y Sáfran seguirán produciéndola hasta el final.",
+      "escena": {
+        "tipo": "lista",
+        "titulo": "LO CONFIRMADO",
+        "items": [
+          "Siguen como productores",
+          "Rodaje terminado",
+          "En posproducción"
+        ],
+        "fondo": "#14532D"
+      }
+    },
+    {
+      "texto": "Gunn dijo: los personajes que creamos seguirán vivos.",
+      "decir": "Gan dijo: los personajes que creamos seguirán vivos.",
+      "escena": {
+        "tipo": "protagonista",
+        "personaje": "palomito",
+        "lineas": [
+          "JAMES GUNN"
+        ],
+        "etiqueta": "\"SEGUIRÁN VIVOS\"",
+        "arte": "libro",
+        "fondo": "#4B1F7A"
+      }
+    },
+    {
+      "texto": "Y ya escribe otro proyecto de DC.",
+      "decir": "Y ya escribe otro proyecto de Di Si.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 1,
+        "prefijo": "+",
+        "texto": "PROYECTO NUEVO",
+        "arte": "espada",
+        "fondo": "#7A2E12"
+      }
+    },
+    {
+      "texto": "Así que Superman sigue... aunque Gunn ya no mande en DC.",
+      "decir": "Así que Súperman sigue... aunque Gan ya no mande en Di Si.",
+      "escenas": [
+        {
+          "tipo": "mosaico",
+          "lineas": [
+            "SIGUEN EN MARCHA"
+          ],
+          "fondo": "#3A3F55",
+          "destacar": 0,
+          "fichas": [
+            {
+              "titulo": "Man of Tomorrow",
+              "anio": "2027",
+              "arte": "estrella",
+              "color": "#1F3B8A"
+            },
+            {
+              "titulo": "Mister Miracle",
+              "anio": "2028",
+              "arte": "portal",
+              "color": "#14532D"
+            },
+            {
+              "titulo": "Creature Commandos T2",
+              "anio": "2027",
+              "arte": "calavera",
+              "color": "#4B1F7A"
+            }
+          ]
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

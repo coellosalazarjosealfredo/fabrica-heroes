@@ -1,0 +1,137 @@
+{
+  "id": "H-20261126-08",
+  "publicacion": {
+    "titulo_youtube": "VisionQuest juntó a todas las IAs de Tony Stark 🤖 #shorts",
+    "descripcion": "VisionQuest, la serie de Vision en Disney+, reúne a J.A.R.V.I.S., F.R.I.D.A.Y., E.D.I.T.H. y Ultrón 🤖\n\n¿Cuál es tu IA favorita del UCM? 👇\n\n#marvel #visionquest #vision #ultron #ucm #disneyplus #shorts",
+    "texto_tiktok": "VisionQuest reunió a las IAs de Tony Stark 🤖 ¿Cuál es tu favorita del UCM? 👇 #marvel #visionquest #vision #ultron #ucm #disneyplus",
+    "tags": [
+      "marvel",
+      "visionquest",
+      "vision",
+      "ultron",
+      "disney plus"
+    ]
+  },
+  "fuentes": [
+    "https://en.wikipedia.org/wiki/VisionQuest"
+  ],
+  "bloques": [
+    {
+      "texto": "Las inteligencias artificiales de Tony Stark tienen rostro... en VisionQuest.",
+      "decir": "Las inteligencias artificiales de Tóni Stárk tienen rostro... en Vísion Cuést.",
+      "escena": {
+        "tipo": "titulo",
+        "lineas": [
+          "LAS IAs",
+          {
+            "t": "DE TONY",
+            "c": "cromo"
+          }
+        ],
+        "arte": "robot",
+        "fondo": "#0E5E6F",
+        "globo": "¡TIENEN CARA!"
+      }
+    },
+    {
+      "texto": "J.A.R.V.I.S., el mayordomo digital, vuelve, ahora interpretado por James D'Arcy.",
+      "decir": "Yarvis, el mayordomo digital, vuelve, ahora interpretado por Yéims Dársi.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "J.A.R.V.I.S.",
+        "anio": "JAMES D'ARCY",
+        "arte": "casco",
+        "color": "#1F3B8A",
+        "check": true,
+        "fondo": "#1F3B8A"
+      }
+    },
+    {
+      "texto": "F.R.I.D.A.Y. es Orla Brady y E.D.I.T.H. es Emily Hampshire.",
+      "decir": "Fráidei es Orla Brédi y Ídiz es Émili Jámpshaier.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "MÁS IAs",
+        "fondo": "#4B1F7A",
+        "fichas": [
+          {
+            "titulo": "F.R.I.D.A.Y.",
+            "anio": "ORLA BRADY",
+            "arte": "estrella",
+            "color": "#7A2E12"
+          },
+          {
+            "titulo": "E.D.I.T.H.",
+            "anio": "EMILY HAMPSHIRE",
+            "arte": "ojo",
+            "color": "#0E5E6F"
+          }
+        ]
+      }
+    },
+    {
+      "texto": "Y James Spader regresa como Ultrón.",
+      "decir": "Y Yéims Spéider regresa como Ultrón.",
+      "escena": {
+        "tipo": "protagonista",
+        "personaje": "palomito",
+        "lineas": [
+          "ULTRÓN"
+        ],
+        "etiqueta": "JAMES SPADER",
+        "arte": "calavera",
+        "fondo": "#8A1F2B",
+        "impacto": true
+      }
+    },
+    {
+      "texto": "Paul Bettany vuelve como Vision en una serie de ocho episodios.",
+      "decir": "Pol Bétani vuelve como Vísion en una serie de ocho episodios.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 8,
+        "texto": "EPISODIOS",
+        "arte": "claqueta",
+        "fondo": "#14532D"
+      }
+    },
+    {
+      "texto": "Sus ocho episodios ya están en Disney+... con las IAs de Tony Stark.",
+      "decir": "Sus ocho episodios ya están en Disní Plas... con las IAs de Tóni Stárk.",
+      "escenas": [
+        {
+          "tipo": "medallones",
+          "lineas": [
+            "VISIONQUEST"
+          ],
+          "fondo": "#3A3F55",
+          "items": [
+            {
+              "arte": "casco",
+              "texto": "J.A.R.V.I.S.",
+              "color": "#1F3B8A"
+            },
+            {
+              "arte": "estrella",
+              "texto": "F.R.I.D.A.Y.",
+              "color": "#7A2E12"
+            },
+            {
+              "arte": "ojo",
+              "texto": "E.D.I.T.H.",
+              "color": "#0E5E6F"
+            },
+            {
+              "arte": "calavera",
+              "texto": "ULTRÓN",
+              "color": "#8A1F2B"
+            }
+          ]
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}

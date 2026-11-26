@@ -1,0 +1,135 @@
+{
+  "id": "H-20261126-01",
+  "publicacion": {
+    "titulo_youtube": "Faltan 22 días y Doomsday ya rompió un récord 📈 #shorts",
+    "descripcion": "Cuenta regresiva a Avengers: Doomsday: faltan 22 días y las proyecciones de taquilla ya son históricas ⏳💰\n\n¿Crees que superará el estreno de Endgame? 👇\n\n#marvel #avengersdoomsday #doomsday #ucm #avengers #taquilla #shorts",
+    "texto_tiktok": "Faltan 22 días para Avengers: Doomsday ⏳ y ya rompió un récord de proyección. ¿Superará a Endgame? 👇 #marvel #avengersdoomsday #doomsday #ucm #avengers #taquilla",
+    "tags": [
+      "marvel",
+      "avengers doomsday",
+      "cuenta regresiva",
+      "taquilla",
+      "ucm"
+    ]
+  },
+  "serie": {
+    "texto": "CUENTA REGRESIVA DOOMSDAY",
+    "total": 23
+  },
+  "fuentes": [
+    "https://screenrant.com/avengers-doomsday-box-office-nrg-opening-weekend-projections-record/",
+    "https://www.boxofficemojo.com/title/tt4154796/",
+    "https://www.the-numbers.com/movie/Spider-Man-Brand-New-Day-%282026%29",
+    "https://en.wikipedia.org/wiki/Avengers:_Doomsday"
+  ],
+  "bloques": [
+    {
+      "texto": "Faltan 22 días para Doomsday... y ya rompió un récord sin estrenarse.",
+      "decir": "Faltan veintidós días para Dúmsdei... y ya rompió un récord sin estrenarse.",
+      "escena": {
+        "tipo": "titulo",
+        "numero": 22,
+        "lineas": [
+          "FALTAN",
+          {
+            "t": "DÍAS",
+            "c": "verde"
+          }
+        ],
+        "arte": "reloj_arena",
+        "fondo": "#14532D",
+        "globo": "¡RÉCORD!"
+      }
+    },
+    {
+      "texto": "Las proyecciones le dan 270 millones o más en su primer fin de semana.",
+      "decir": "Las proyecciones le dan doscientos setenta millones o más en su primer fin de semana.",
+      "escena": {
+        "tipo": "cifra",
+        "valor": 270,
+        "prefijo": "US$ ",
+        "sufijo": " M",
+        "texto": "PROYECCIÓN EN EE. UU.",
+        "arte": "dinero",
+        "fondo": "#7A5A12"
+      }
+    },
+    {
+      "texto": "Es la cifra más alta que ha medido la encuestadora NRG.",
+      "decir": "Es la cifra más alta que ha medido la encuestadora ene erre yi.",
+      "escena": {
+        "tipo": "ficha",
+        "titulo": "Récord de NRG",
+        "anio": "3 SEMANAS ANTES",
+        "arte": "trofeo",
+        "color": "#1F3B8A",
+        "check": true,
+        "fondo": "#1F3B8A"
+      }
+    },
+    {
+      "texto": "A Spider-Man le proyectaban 180... y abrió con 360.",
+      "decir": "A Spáider Man le proyectaban ciento ochenta... y abrió con trescientos sesenta.",
+      "escena": {
+        "tipo": "versus",
+        "titulo": "SPIDER-MAN: BND",
+        "a": {
+          "titulo": "Proyección",
+          "anio": "US$ 180 M",
+          "arte": "cine_boleto",
+          "color": "#3A3F55"
+        },
+        "b": {
+          "titulo": "Estreno real",
+          "anio": "US$ 360 M",
+          "arte": "cine_palomitas",
+          "color": "#8A1F2B"
+        }
+      }
+    },
+    {
+      "texto": "El récord de Endgame es de 357 millones.",
+      "decir": "El récord de Éndgueim es de trescientos cincuenta y siete millones.",
+      "escena": {
+        "tipo": "dos_fichas",
+        "titulo": "EL RÉCORD A BATIR",
+        "fondo": "#4B1F7A",
+        "fichas": [
+          {
+            "titulo": "Endgame",
+            "anio": "US$ 357 M",
+            "arte": "corona",
+            "color": "#7A5A12"
+          },
+          {
+            "titulo": "Doomsday",
+            "anio": "¿?",
+            "arte": "interrogacion",
+            "color": "#14532D"
+          }
+        ],
+        "pie": "18 DE DICIEMBRE",
+        "pie_color": "amarillo"
+      }
+    },
+    {
+      "texto": "¿Lo superará? Lo sabremos en 22 días.",
+      "decir": "¿Lo superará? Lo sabremos en veintidós días.",
+      "escenas": [
+        {
+          "tipo": "lista",
+          "titulo": "FALTAN 22 DÍAS",
+          "items": [
+            "Proyección: US$ 270 M+",
+            "Récord: US$ 357 M",
+            "Estreno: 18 dic"
+          ],
+          "fondo": "#3A3F55"
+        },
+        {
+          "tipo": "bucle"
+        }
+      ]
+    }
+  ]
+}
