@@ -1,10 +1,10 @@
 {
- "actualizado": "2026-11-25T07:25+00:00",
+ "actualizado": "2026-11-26T07:24+00:00",
  "videos": [
   {
-   "guion": "0003-gemas-del-infinito.json",
-   "titulo": "¿Dónde estaba cada Gema del Infinito? 💎 #shorts",
-   "programado": "2026-11-24T23:00-05:00",
+   "guion": "20261125-09-endgame-encore-4-escenas.json",
+   "titulo": "Las 4 escenas nuevas de Endgame Encore que conectan con Doomsday 🎬 #shorts",
+   "programado": "2026-11-25T20:30-05:00",
    "youtube": null,
    "tiktok": {
     "Reactions": 0,
@@ -18,9 +18,9 @@
    }
   },
   {
-   "guion": "0002-top5-taquilla-marvel.json",
-   "titulo": "La película de Marvel que más dinero ha hecho 💰 #shorts",
-   "programado": "2026-11-24T22:00-05:00",
+   "guion": "20261125-07-spiderman-bnd-supera-infinity-war.json",
+   "titulo": "Spider-Man: Brand New Day ya superó a Infinity War 🕷️💰 #shorts",
+   "programado": "2026-11-25T19:00-05:00",
    "youtube": null,
    "tiktok": {
     "Reactions": 0,
@@ -31,6 +31,150 @@
     "Reach": 0,
     "Watch Time (min)": 0,
     "Avg. Watch Time (sec)": 0
+   }
+  },
+  {
+   "guion": "20261125-06-kate-bishop-doomsday.json",
+   "titulo": "Kate Bishop confirmada en Doomsday 🏹 ¿Llegan los Jóvenes Vengadores? #shorts",
+   "programado": "2026-11-25T17:30-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 0,
+    "Comments": 0,
+    "Eng. Rate": 0,
+    "Video Views": 0,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 0,
+    "Avg. Watch Time (sec)": 0
+   }
+  },
+  {
+   "guion": "20261125-04-patrick-stewart-ultimo-dia.json",
+   "titulo": "El último día de Patrick Stewart en un set de cine 💔 #shorts",
+   "programado": "2026-11-25T16:00-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 0,
+    "Comments": 0,
+    "Eng. Rate": 0,
+    "Video Views": 0,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 0,
+    "Avg. Watch Time (sec)": 0
+   }
+  },
+  {
+   "guion": "20261125-03-trailer-final-doomsday-parte-2.json",
+   "titulo": "Doctor Doom: \"vidas robadas\" 🔥 Tráiler final de Doomsday Parte 2 #shorts",
+   "programado": "2026-11-25T14:30-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 2,
+    "Comments": 0,
+    "Eng. Rate": 8,
+    "Video Views": 25,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 2.37,
+    "Avg. Watch Time (sec)": 5.09
+   }
+  },
+  {
+   "guion": "20261125-01-faltan-23-dias-doomsday.json",
+   "titulo": "Faltan 23 días para Doomsday ⏳ ¿Cuánto dura la película? #shorts",
+   "programado": "2026-11-25T13:00-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 0,
+    "Comments": 0,
+    "Eng. Rate": 0,
+    "Video Views": 4,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 0.07,
+    "Avg. Watch Time (sec)": 2.16
+   }
+  },
+  {
+   "guion": "20261125-08-supergirl-vs-clayface-taquilla.json",
+   "titulo": "Supergirl vs Clayface: misma taquilla, destino opuesto 💸 #shorts",
+   "programado": "2026-11-25T10:00-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 0,
+    "Comments": 0,
+    "Eng. Rate": 0,
+    "Video Views": 1,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 0.15,
+    "Avg. Watch Time (sec)": 9.13
+   }
+  },
+  {
+   "guion": "20261125-05-doom-mascara-todo-el-tiempo.json",
+   "titulo": "¿Robert Downey Jr. se quita la máscara de Doom? Chris Evans responde 🎭 #shorts",
+   "programado": "2026-11-25T08:30-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 8,
+    "Comments": 0,
+    "Eng. Rate": 2.96,
+    "Video Views": 270,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 19.62,
+    "Avg. Watch Time (sec)": 3.87
+   }
+  },
+  {
+   "guion": "20261125-02-trailer-final-doomsday-parte-1.json",
+   "titulo": "El tráiler final de Doomsday explica por qué vuelve Steve Rogers 😱 Parte 1 #shorts",
+   "programado": "2026-11-25T07:00-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 4,
+    "Comments": 0,
+    "Eng. Rate": 1.31,
+    "Video Views": 306,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 19.22,
+    "Avg. Watch Time (sec)": 3.49
+   }
+  },
+  {
+   "guion": "0003-gemas-del-infinito.json",
+   "titulo": "¿Dónde estaba cada Gema del Infinito? 💎 #shorts",
+   "programado": "2026-11-24T23:00-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 10,
+    "Comments": 0,
+    "Eng. Rate": 3.23,
+    "Video Views": 310,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 22.97,
+    "Avg. Watch Time (sec)": 3.87
+   }
+  },
+  {
+   "guion": "0002-top5-taquilla-marvel.json",
+   "titulo": "La película de Marvel que más dinero ha hecho 💰 #shorts",
+   "programado": "2026-11-24T22:00-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 8,
+    "Comments": 0,
+    "Eng. Rate": 2.67,
+    "Video Views": 300,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 24.42,
+    "Avg. Watch Time (sec)": 4.43
    }
   }
  ]
