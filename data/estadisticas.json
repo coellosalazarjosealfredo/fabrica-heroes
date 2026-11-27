@@ -1,6 +1,70 @@
 {
- "actualizado": "2026-11-26T07:24+00:00",
+ "actualizado": "2026-11-27T07:23+00:00",
  "videos": [
+  {
+   "guion": "20261126-09-club-2500-millones-solo-3.json",
+   "titulo": "Solo 3 películas superan 2.500 millones 💰 y una es de Spider-Man #shorts",
+   "programado": "2026-11-26T11:30-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 0,
+    "Comments": 0,
+    "Eng. Rate": 0,
+    "Video Views": 1,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 0.12,
+    "Avg. Watch Time (sec)": 3.64
+   }
+  },
+  {
+   "guion": "20261126-05-batman-part-ii-tres-fechas.json",
+   "titulo": "The Batman Part II ya cambió de fecha DOS veces 🦇 #shorts",
+   "programado": "2026-11-26T10:00-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 0,
+    "Comments": 0,
+    "Eng. Rate": 0,
+    "Video Views": 1,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 0.25,
+    "Avg. Watch Time (sec)": 7.82
+   }
+  },
+  {
+   "guion": "20261126-04-jeremy-latcham-quien-es.json",
+   "titulo": "El nuevo jefe de DC produjo Iron Man y Avengers 🤯 #shorts",
+   "programado": "2026-11-26T08:30-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 1,
+    "Comments": 0,
+    "Eng. Rate": 20,
+    "Video Views": 5,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 0.53,
+    "Avg. Watch Time (sec)": 4.67
+   }
+  },
+  {
+   "guion": "20261126-01-faltan-22-dias-doomsday-record.json",
+   "titulo": "Faltan 22 días y Doomsday ya rompió un récord 📈 #shorts",
+   "programado": "2026-11-26T07:00-05:00",
+   "youtube": null,
+   "tiktok": {
+    "Reactions": 1,
+    "Comments": 0,
+    "Eng. Rate": 50,
+    "Video Views": 2,
+    "Shares": 0,
+    "Reach": 0,
+    "Watch Time (min)": 2.88,
+    "Avg. Watch Time (sec)": 57.73
+   }
+  },
   {
    "guion": "20261125-09-endgame-encore-4-escenas.json",
    "titulo": "Las 4 escenas nuevas de Endgame Encore que conectan con Doomsday 🎬 #shorts",
@@ -10,11 +74,11 @@
     "Reactions": 0,
     "Comments": 0,
     "Eng. Rate": 0,
-    "Video Views": 0,
+    "Video Views": 3,
     "Shares": 0,
     "Reach": 0,
-    "Watch Time (min)": 0,
-    "Avg. Watch Time (sec)": 0
+    "Watch Time (min)": 0.77,
+    "Avg. Watch Time (sec)": 11.67
    }
   },
   {
@@ -23,14 +87,14 @@
    "programado": "2026-11-25T19:00-05:00",
    "youtube": null,
    "tiktok": {
-    "Reactions": 0,
+    "Reactions": 1,
     "Comments": 0,
-    "Eng. Rate": 0,
-    "Video Views": 0,
+    "Eng. Rate": 50,
+    "Video Views": 2,
     "Shares": 0,
     "Reach": 0,
-    "Watch Time (min)": 0,
-    "Avg. Watch Time (sec)": 0
+    "Watch Time (min)": 0.37,
+    "Avg. Watch Time (sec)": 4.52
    }
   },
   {
@@ -42,11 +106,11 @@
     "Reactions": 0,
     "Comments": 0,
     "Eng. Rate": 0,
-    "Video Views": 0,
+    "Video Views": 5,
     "Shares": 0,
     "Reach": 0,
-    "Watch Time (min)": 0,
-    "Avg. Watch Time (sec)": 0
+    "Watch Time (min)": 0.17,
+    "Avg. Watch Time (sec)": 1.82
    }
   },
   {
@@ -58,11 +122,11 @@
     "Reactions": 0,
     "Comments": 0,
     "Eng. Rate": 0,
-    "Video Views": 0,
+    "Video Views": 3,
     "Shares": 0,
-    "Reach": 0,
-    "Watch Time (min)": 0,
-    "Avg. Watch Time (sec)": 0
+    "Reach": 2,
+    "Watch Time (min)": 0.32,
+    "Avg. Watch Time (sec)": 4.94
    }
   },
   {
@@ -73,12 +137,12 @@
    "tiktok": {
     "Reactions": 2,
     "Comments": 0,
-    "Eng. Rate": 8,
-    "Video Views": 25,
+    "Eng. Rate": 7.69,
+    "Video Views": 26,
     "Shares": 0,
-    "Reach": 0,
-    "Watch Time (min)": 2.37,
-    "Avg. Watch Time (sec)": 5.09
+    "Reach": 26,
+    "Watch Time (min)": 2.85,
+    "Avg. Watch Time (sec)": 5.35
    }
   },
   {
@@ -87,14 +151,14 @@
    "programado": "2026-11-25T13:00-05:00",
    "youtube": null,
    "tiktok": {
-    "Reactions": 0,
+    "Reactions": 1,
     "Comments": 0,
-    "Eng. Rate": 0,
-    "Video Views": 4,
+    "Eng. Rate": 20,
+    "Video Views": 5,
     "Shares": 0,
-    "Reach": 0,
-    "Watch Time (min)": 0.07,
-    "Avg. Watch Time (sec)": 2.16
+    "Reach": 5,
+    "Watch Time (min)": 0.27,
+    "Avg. Watch Time (sec)": 2.04
    }
   },
   {
@@ -106,11 +170,11 @@
     "Reactions": 0,
     "Comments": 0,
     "Eng. Rate": 0,
-    "Video Views": 1,
+    "Video Views": 3,
     "Shares": 0,
-    "Reach": 0,
-    "Watch Time (min)": 0.15,
-    "Avg. Watch Time (sec)": 9.13
+    "Reach": 3,
+    "Watch Time (min)": 0.28,
+    "Avg. Watch Time (sec)": 4.33
    }
   },
   {
@@ -119,14 +183,14 @@
    "programado": "2026-11-25T08:30-05:00",
    "youtube": null,
    "tiktok": {
-    "Reactions": 8,
+    "Reactions": 16,
     "Comments": 0,
     "Eng. Rate": 2.96,
-    "Video Views": 270,
+    "Video Views": 540,
     "Shares": 0,
-    "Reach": 0,
-    "Watch Time (min)": 19.62,
-    "Avg. Watch Time (sec)": 3.87
+    "Reach": 280,
+    "Watch Time (min)": 44.78,
+    "Avg. Watch Time (sec)": 4.52
    }
   },
   {
@@ -135,14 +199,14 @@
    "programado": "2026-11-25T07:00-05:00",
    "youtube": null,
    "tiktok": {
-    "Reactions": 4,
+    "Reactions": 8,
     "Comments": 0,
-    "Eng. Rate": 1.31,
-    "Video Views": 306,
+    "Eng. Rate": 1.58,
+    "Video Views": 507,
     "Shares": 0,
     "Reach": 0,
-    "Watch Time (min)": 19.22,
-    "Avg. Watch Time (sec)": 3.49
+    "Watch Time (min)": 40.85,
+    "Avg. Watch Time (sec)": 4.42
    }
   },
   {
@@ -151,14 +215,14 @@
    "programado": "2026-11-24T23:00-05:00",
    "youtube": null,
    "tiktok": {
-    "Reactions": 10,
+    "Reactions": 12,
     "Comments": 0,
-    "Eng. Rate": 3.23,
-    "Video Views": 310,
+    "Eng. Rate": 3.53,
+    "Video Views": 340,
     "Shares": 0,
-    "Reach": 0,
-    "Watch Time (min)": 22.97,
-    "Avg. Watch Time (sec)": 3.87
+    "Reach": 329,
+    "Watch Time (min)": 26.47,
+    "Avg. Watch Time (sec)": 4
    }
   },
   {
@@ -167,14 +231,14 @@
    "programado": "2026-11-24T22:00-05:00",
    "youtube": null,
    "tiktok": {
-    "Reactions": 8,
+    "Reactions": 9,
     "Comments": 0,
-    "Eng. Rate": 2.67,
-    "Video Views": 300,
+    "Eng. Rate": 2.8,
+    "Video Views": 321,
     "Shares": 0,
-    "Reach": 0,
-    "Watch Time (min)": 24.42,
-    "Avg. Watch Time (sec)": 4.43
+    "Reach": 308,
+    "Watch Time (min)": 26.98,
+    "Avg. Watch Time (sec)": 4.56
    }
   }
  ]
