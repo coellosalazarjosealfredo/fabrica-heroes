@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-27T07:23+00:00",
+ "actualizado": "2026-11-28T07:17+00:00",
  "videos": [
   {
    "guion": "20261126-09-club-2500-millones-solo-3.json",
@@ -10,11 +10,11 @@
     "Reactions": 0,
     "Comments": 0,
     "Eng. Rate": 0,
-    "Video Views": 1,
+    "Video Views": 2,
     "Shares": 0,
     "Reach": 0,
-    "Watch Time (min)": 0.12,
-    "Avg. Watch Time (sec)": 3.64
+    "Watch Time (min)": 0.27,
+    "Avg. Watch Time (sec)": 4.05
    }
   },
   {
@@ -29,8 +29,8 @@
     "Video Views": 1,
     "Shares": 0,
     "Reach": 0,
-    "Watch Time (min)": 0.25,
-    "Avg. Watch Time (sec)": 7.82
+    "Watch Time (min)": 0.38,
+    "Avg. Watch Time (sec)": 7.72
    }
   },
   {
@@ -45,8 +45,8 @@
     "Video Views": 5,
     "Shares": 0,
     "Reach": 0,
-    "Watch Time (min)": 0.53,
-    "Avg. Watch Time (sec)": 4.67
+    "Watch Time (min)": 0.68,
+    "Avg. Watch Time (sec)": 5.15
    }
   },
   {
@@ -89,12 +89,12 @@
    "tiktok": {
     "Reactions": 1,
     "Comments": 0,
-    "Eng. Rate": 50,
-    "Video Views": 2,
+    "Eng. Rate": 33.33,
+    "Video Views": 3,
     "Shares": 0,
     "Reach": 0,
-    "Watch Time (min)": 0.37,
-    "Avg. Watch Time (sec)": 4.52
+    "Watch Time (min)": 0.6,
+    "Avg. Watch Time (sec)": 6.04
    }
   },
   {
@@ -108,7 +108,7 @@
     "Eng. Rate": 0,
     "Video Views": 5,
     "Shares": 0,
-    "Reach": 0,
+    "Reach": 4,
     "Watch Time (min)": 0.17,
     "Avg. Watch Time (sec)": 1.82
    }
@@ -137,12 +137,12 @@
    "tiktok": {
     "Reactions": 2,
     "Comments": 0,
-    "Eng. Rate": 7.69,
-    "Video Views": 26,
+    "Eng. Rate": 7.41,
+    "Video Views": 27,
     "Shares": 0,
     "Reach": 26,
     "Watch Time (min)": 2.85,
-    "Avg. Watch Time (sec)": 5.35
+    "Avg. Watch Time (sec)": 5.19
    }
   },
   {
@@ -204,7 +204,7 @@
     "Eng. Rate": 1.58,
     "Video Views": 507,
     "Shares": 0,
-    "Reach": 0,
+    "Reach": 286,
     "Watch Time (min)": 40.85,
     "Avg. Watch Time (sec)": 4.42
    }
@@ -217,12 +217,12 @@
    "tiktok": {
     "Reactions": 12,
     "Comments": 0,
-    "Eng. Rate": 3.53,
-    "Video Views": 340,
+    "Eng. Rate": 3.51,
+    "Video Views": 342,
     "Shares": 0,
     "Reach": 329,
-    "Watch Time (min)": 26.47,
-    "Avg. Watch Time (sec)": 4
+    "Watch Time (min)": 26.82,
+    "Avg. Watch Time (sec)": 4.02
    }
   },
   {
@@ -234,11 +234,11 @@
     "Reactions": 9,
     "Comments": 0,
     "Eng. Rate": 2.8,
-    "Video Views": 321,
+    "Video Views": 322,
     "Shares": 0,
     "Reach": 308,
-    "Watch Time (min)": 26.98,
-    "Avg. Watch Time (sec)": 4.56
+    "Watch Time (min)": 27.13,
+    "Avg. Watch Time (sec)": 4.57
    }
   }
  ]
